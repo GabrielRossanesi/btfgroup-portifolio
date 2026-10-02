@@ -1,0 +1,196 @@
+[
+  {
+    "file": "BTF-Branco-768x146.webp",
+    "bytes": 7462,
+    "sha256": "8e148aba48c669c007f7eeae5a1ff6041de6576f11b4b2b676c8a1818731fa25",
+    "type": "image",
+    "width": 768,
+    "height": 146,
+    "format": "WEBP"
+  },
+  {
+    "file": "Claudia-Trajano-1.webp",
+    "bytes": 91202,
+    "sha256": "bdbad2b04c5297e5ec75dad804131ae1e245e498e1b8bfcf70b53cf7a156cbb5",
+    "type": "image",
+    "width": 1080,
+    "height": 800,
+    "format": "WEBP"
+  },
+  {
+    "file": "Flora.webp",
+    "bytes": 50870,
+    "sha256": "79e6b8a45697b0b0f1c82c2b8f8ddd3ae4611a61786b0485b7353946debba6f5",
+    "type": "image",
+    "width": 1080,
+    "height": 800,
+    "format": "WEBP"
+  },
+  {
+    "file": "Francisco-1024x759.webp",
+    "bytes": 56942,
+    "sha256": "bce7d5bea78309e3fc388583fc890ac2506d3ca8966af5fc05ad32b1fadff9e7",
+    "type": "image",
+    "width": 1024,
+    "height": 759,
+    "format": "WEBP"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.26 (1).jpeg",
+    "bytes": 48684,
+    "sha256": "20865824b1e1934cbd811ab6369366fceb5b5b26dc0782a2a7b9b12c40ff46c6",
+    "type": "image",
+    "width": 640,
+    "height": 641,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.26 (2).jpeg",
+    "bytes": 150466,
+    "sha256": "cf0504dd608ec0dc31855b72309b527dcebcd478f37ae0cd657d6b4051f1c1ad",
+    "type": "image",
+    "width": 1280,
+    "height": 1280,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.26 (3).jpeg",
+    "bytes": 48793,
+    "sha256": "e4844971d6ee05e9ec7a34e424d6464bed89818a56e979262b6438f2ccbceba7",
+    "type": "image",
+    "width": 640,
+    "height": 641,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.26.jpeg",
+    "bytes": 240701,
+    "sha256": "5a01ed0bb3aba51d99cb49ea705336ada71eec30de60eb7b82b87fa75a1b0ab1",
+    "type": "image",
+    "width": 1600,
+    "height": 1200,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.27 (1).jpeg",
+    "bytes": 151791,
+    "sha256": "a6f325774d645f930d860483e4a7404c114a7ff3bffc704ed3633f855037d0db",
+    "type": "image",
+    "width": 1200,
+    "height": 1600,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.27 (2).jpeg",
+    "bytes": 124172,
+    "sha256": "a29f44f696e885f9af302ec44189ffca4d8a2a02a4e094277b911516738fa344",
+    "type": "image",
+    "width": 1200,
+    "height": 1600,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.27 (3).jpeg",
+    "bytes": 154435,
+    "sha256": "d064ea42862515a0f042327d359f5850ee80684f88ffbd419a4ff2ec77a7b192",
+    "type": "image",
+    "width": 1600,
+    "height": 1065,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.27 (4).jpeg",
+    "bytes": 104716,
+    "sha256": "7170e4d09c2053a321f526338852fcaac36a5ab7bf691a99a48801143e0cf65b",
+    "type": "image",
+    "width": 1600,
+    "height": 1200,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.27.jpeg",
+    "bytes": 153905,
+    "sha256": "f5f62c2bf27d2cda3bc576e0e7359fc66dcba15e02287e8efde13ee5dfe95c66",
+    "type": "image",
+    "width": 1600,
+    "height": 1200,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.28 (1).jpeg",
+    "bytes": 49768,
+    "sha256": "3e472751d3e34784a12abf79f044c4c29e8da331144ec1fd95f0c864162f7955",
+    "type": "image",
+    "width": 640,
+    "height": 640,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.28 (2).jpeg",
+    "bytes": 487354,
+    "sha256": "feb770e4f09e504a4dca344461fa8d6e7e90cc0fd6bf55ec17d12a93f200ba2f",
+    "type": "image",
+    "width": 1600,
+    "height": 1600,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Image 2026-10-02 at 09.04.28.jpeg",
+    "bytes": 42905,
+    "sha256": "9e5d23aa658f4b40a6455e12f4222f86fa2e16b53ade11b05a00233a42ce0f23",
+    "type": "image",
+    "width": 633,
+    "height": 708,
+    "format": "JPEG"
+  },
+  {
+    "file": "WhatsApp Video 2026-10-02 at 09.04.25 (1).mp4",
+    "bytes": 1325743,
+    "sha256": "154770c9032e2a3912aa29efa0bfcc46aaf4632430a1e2ce35b687159fefb85d",
+    "type": "video",
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'img\\WhatsApp Video 2026-10-02 at 09.04.25 (1).mp4':\n  Metadata:\n    major_brand     : mp42\n    minor_version   : 0\n    compatible_brands: mp42isom\n  Duration: 00:00:06.29, start: 0.000000, bitrate: 1685 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 1024x576, 1634 kb/s, 30 fps, 30 tbr, 600 tbn (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\n      Side data:\n        displaymatrix: rotation of -90.00 degrees\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 62 kb/s (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+    "duration": 6.29,
+    "width": 1024,
+    "height": 576
+  },
+  {
+    "file": "WhatsApp Video 2026-10-02 at 09.04.25.mp4",
+    "bytes": 3078261,
+    "sha256": "42079e322ab44d4c3f7f049bc2855e0f69489c5d63381118e9873fb3005bba1d",
+    "type": "video",
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'img\\WhatsApp Video 2026-10-02 at 09.04.25.mp4':\n  Metadata:\n    major_brand     : mp42\n    minor_version   : 0\n    compatible_brands: mp42isom\n  Duration: 00:00:14.63, start: 0.000000, bitrate: 1683 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 464x832, 1616 kb/s, 30 fps, 30 tbr, 600 tbn (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 63 kb/s (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+    "duration": 14.63,
+    "width": 464,
+    "height": 832
+  },
+  {
+    "file": "WhatsApp Video 2026-10-02 at 09.04.26.mp4",
+    "bytes": 997487,
+    "sha256": "effb788db529058977bc0d240f762f112c2e0fad61392b7cbe5e82d07cc7f413",
+    "type": "video",
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'img\\WhatsApp Video 2026-10-02 at 09.04.26.mp4':\n  Metadata:\n    major_brand     : mp42\n    minor_version   : 0\n    compatible_brands: mp42isom\n  Duration: 00:00:05.78, start: 0.000000, bitrate: 1380 kb/s\n  Stream #0:0[0x1](und): Video: h264 (Baseline) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 848x480, 1317 kb/s, 30 fps, 30 tbr, 600 tbn (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\n      Side data:\n        displaymatrix: rotation of -90.00 degrees\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 62 kb/s (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+    "duration": 5.78,
+    "width": 848,
+    "height": 480
+  },
+  {
+    "file": "WhatsApp Video 2026-10-02 at 09.04.28.mp4",
+    "bytes": 2076099,
+    "sha256": "794c1f7f7054a6ab8663d4339a749e6c5d13b67d2b93411c1456f3257b436bc0",
+    "type": "video",
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'img\\WhatsApp Video 2026-10-02 at 09.04.28.mp4':\n  Metadata:\n    major_brand     : mp42\n    minor_version   : 0\n    compatible_brands: mp42isom\n  Duration: 00:00:10.20, start: 0.000000, bitrate: 1628 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 478x850, 1368 kb/s, 30.01 fps, 120 tbr, 90k tbn (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 256 kb/s (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+    "duration": 10.2,
+    "width": 478,
+    "height": 850
+  },
+  {
+    "file": "WhatsApp Video 2026-10-02 at 09.04.29.mp4",
+    "bytes": 12470684,
+    "sha256": "49ff88b21d76e31a675aa0df03ce2d6f2dd0d285f4ae0834b6162a4bbb0b3b09",
+    "type": "video",
+    "probe": "Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'img\\WhatsApp Video 2026-10-02 at 09.04.29.mp4':\n  Metadata:\n    major_brand     : mp42\n    minor_version   : 0\n    compatible_brands: mp42isom\n  Duration: 00:01:13.09, start: 0.000000, bitrate: 1364 kb/s\n  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709, progressive), 478x850, 1104 kb/s, 30.02 fps, 120 tbr, 90k tbn (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\n  Stream #0:1[0x2](und): Audio: aac (LC) (mp4a / 0x6134706D), 48000 Hz, stereo, fltp, 256 kb/s (default)\n      Metadata:\n        vendor_id       : [0][0][0][0]\nAt least one output file must be specified\n",
+    "duration": 73.09,
+    "width": 478,
+    "height": 850
+  }
+]

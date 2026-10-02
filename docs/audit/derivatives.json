@@ -1,0 +1,86 @@
+{
+  "hero": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (3).jpeg",
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "action": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27.jpeg",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "action-detail": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (2).jpeg",
+    "width": 1200,
+    "height": 1600,
+    "widths": [
+      480,
+      800,
+      1200
+    ]
+  },
+  "experience": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.26.jpeg",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "origin": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (4).jpeg",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      480,
+      800,
+      1200,
+      1600
+    ]
+  },
+  "claudia": {
+    "source": "Claudia-Trajano-1.webp",
+    "width": 1080,
+    "height": 800,
+    "widths": [
+      480,
+      800,
+      1080
+    ]
+  },
+  "francisco": {
+    "source": "Francisco-1024x759.webp",
+    "width": 1024,
+    "height": 759,
+    "widths": [
+      480,
+      800,
+      1024
+    ]
+  },
+  "luis": {
+    "source": "Flora.webp",
+    "width": 1080,
+    "height": 800,
+    "widths": [
+      480,
+      800,
+      1080
+    ]
+  }
+}

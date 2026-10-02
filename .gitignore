@@ -1,0 +1,66 @@
+# Dependencies, build output and caches
+node_modules/
+.next/
+out/
+dist/
+build/
+coverage/
+.turbo/
+.cache/
+.parcel-cache/
+.npm/
+.pnpm-store/
+*.tsbuildinfo
+next-env.d.ts
+
+# Local environment and credentials (including the local example)
+.env*
+.npmrc
+.netrc
+*.pem
+*.key
+*.p12
+*.pfx
+credentials*.json
+
+# Logs and temporary files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+tmp/
+temp/
+
+# Editor / OS files
+.vscode/
+.idea/
+*.suo
+*.user
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Agent tools and local-only configuration
+.tools/
+.agents/
+.codex/
+.aws/
+
+# Source archive and generated QA/audit images: preserve locally
+/img/
+docs/qa/
+docs/audit/*.jpg
+docs/audit/*.png
+docs/history/v1/qa-results.json
+
+# Optimized reserve photo, not used by the V2 application
+/public/media/action-480.webp
+/public/media/action-800.webp
+/public/media/action-1200.webp
+/public/media/action-1600.webp
