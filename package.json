@@ -8,7 +8,8 @@
     "start": "next start --hostname 127.0.0.1",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "qa": "node scripts/qa.mjs"
+    "qa": "node scripts/qa.mjs",
+    "qa:story": "node scripts/qa-story-v3.mjs"
   },
   "dependencies": {
     "@tailwindcss/postcss": "4.3.3",

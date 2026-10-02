@@ -21,7 +21,15 @@ export function Navigation() {
       site.chapters.forEach((chapter,i)=>{
         const section=document.getElementById(chapter.id);
         // Pin spacers keep the outer chapter in document flow.
-        if(section && section.getBoundingClientRect().top<=window.innerHeight*.4) index=i;
+        if(!section)return;
+        // The first hand-off changes chapter only at the actual network start.
+        // Other chapter thresholds retain the existing presentation behavior.
+        const entered=chapter.id==="desenvolvimento"
+          ? section.dataset.motionStart!==undefined
+            ? window.scrollY>=Number(section.dataset.motionStart)-1
+            : section.getBoundingClientRect().top<=64
+          : section.getBoundingClientRect().top<=window.innerHeight*.4;
+        if(entered)index=i;
       });
       setActive(index);
     };
@@ -35,7 +43,8 @@ export function Navigation() {
     window.addEventListener("keydown",escape);
     document.addEventListener("pointerdown",outside);
     document.addEventListener("fullscreenchange",fs);
-    return ()=>{cancelAnimationFrame(frame);window.removeEventListener("scroll",scroll);window.removeEventListener("resize",scroll);window.removeEventListener("keydown",escape);document.removeEventListener("pointerdown",outside);document.removeEventListener("fullscreenchange",fs);};
+    document.addEventListener("btf:network-layout",scroll);
+    return ()=>{cancelAnimationFrame(frame);window.removeEventListener("scroll",scroll);window.removeEventListener("resize",scroll);window.removeEventListener("keydown",escape);document.removeEventListener("pointerdown",outside);document.removeEventListener("fullscreenchange",fs);document.removeEventListener("btf:network-layout",scroll);};
   },[]);
   const toggleFullscreen=async()=>{
     setError("");

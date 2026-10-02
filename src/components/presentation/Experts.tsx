@@ -30,9 +30,10 @@ export function Experts() {
             {expert.specialty && <p>{expert.specialty}</p>}
             {expert.bio && <details className="expert-bio"><summary>{site.ui.expertAbout} {expert.name}<span aria-hidden="true">+</span></summary><p>{expert.bio}</p></details>}
           </div>
-          <div className="expert-photo"><Media name={expert.image} alt={`${site.media.portraitPrefix} ${expert.name}`} sizes="(max-width: 900px) 100vw, 53vw" /></div>
+          <div className="expert-photo"><Media name={expert.image} alt={`${site.media.portraitPrefix} ${expert.name}`} sizes="(max-width: 600px) calc(100vw - 48px), (max-width: 1200px) 39vw, 512px" /></div>
         </article>)}
       </div>
     </div>
+    <div className="chapter-handoff handoff-encounter page-gutter" aria-hidden="true"><span>{site.action.expertBridge}</span><i /></div>
   </section>;
 }

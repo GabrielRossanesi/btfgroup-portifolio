@@ -1,54 +1,11 @@
-# QA — BTF Group V2
+# QA — BTF Group V3
 
-02/10/2026. **PASS** no build de entrega. Next 16.3.8, React 19.3.0, Node 24.14.0. Lint, TypeScript e build concluídos. QA: 6 viewports, 31 grupos funcionais, zero erros JavaScript/respostas 4xx–5xx de mídia e zero violações detectadas pelo axe.
+02/10/2026. **PASS**.47grupos principais+11complementares=58; oito cenários, zero errosJavaScript/HTTP principais e zero violações axe. Lint/typecheck/build PASS.21originais intactos porSHA-256. V3 local, semcommit/push/deploy.
 
-## Viewports
+Relatório completo: [VISUAL-QA-V3.md](VISUAL-QA-V3.md). Curadoria: [ASSET-USAGE-V3.md](ASSET-USAGE-V3.md). Imagens por instância: [MEDIA-AUDIT-V3.md](MEDIA-AUDIT-V3.md). Entrega18itens: [DELIVERY-V3.md](DELIVERY-V3.md).
 
-| Tela | Overflow / copy cortada | Pins | Axe WCAG 2/2.1 A/AA |
-|---|---|---|---|
-| 1920×1080 | Não / não | 2 | 0 |
-| 1440×900 | Não / não | 2 | 0 |
-| 1366×768 | Não / não | 2 | 0 |
-| 768×1024 | Não / não | 0 | 0 |
-| 390×844 | Não / não | 0 | 0 |
-| 360×800 | Não / não | 0 | 0 |
+Viewports1920×1080,1440×900,1366×768,768×1024,390×844,360×800 emDPR1;1920×1080/390×844 emDPR2. Cinco pins desktop elegível, zero mobile/reduced; nenhuma imagem com raster insuficiente, nenhum overflow/copy cortada.58grupos cobrem dez capítulos, estados editoriais, seis capítulos lento/rápido/reverso/resize/reload, âncoras/back-forward/fullscreen/teclado, loops reais dos dois players, pausa persistente, um playback, Save-Data/reduced/noJS e originais.
 
-Edge Chromium headless isolado, Playwright/axe; sem perfil/abas do usuário. Revisão adicional no navegador integrado e nas capturas de capítulos. Axe complementa inspeção, sem constituir certificação.
+Execução reproduzível: npm.cmd run qa e npm.cmd run qa:story, com npm.cmd run start aberto. Edge Chromium isolado, sem perfil do usuário. Evidências locais docs/qa/v3/results.json e story-results.json e capturas. Auditoria daV2 publicada embefore-*.png/baseline-images.json; relatório anterior preservado emdocs/history/v2/QA-REPORT.md.
 
-## Verificações V2
-
-- Dez capítulos no HTML. Percurso direto Abertura→Especialistas→Empresa→Desenvolvimento→Origem, alinhamento às âncoras, fechamento do menu, Escape devolvendo foco.
-- Rede inicial: nós recolhidos e conectores inteiramente retraídos. Intermediária: competências parciais com deslocamento espacial verificável. Final: seis nós e curvas desenhadas. Seleção por foco/Enter explica cada competência e completa scrub imediatamente.
-- Especialistas: três painéis individuais; controles Claudia/Francisco/Luís posicionam cada painel por teclado. Sem biografia vazia/TODO.
-- Oito aplicações empresariais: disclosure nativo, exclusividade, três competências e contexto; clique/Enter.
-- Dois projetos conhecidos publicados; formatos futuros ocultos. Nenhum TODO/identidade não confirmada na interface.
-- Vídeo 478×850, muted, reprodução/pausa; mobile sem sources antes de play explícito; pausa do usuário persiste após sair/retornar.
-- Reduced motion: rede final estática, sem pins/sources antecipadas. Preferência ao vivo e resize desktop→mobile→paisagem→desktop; telas 2560×1440 e 1280×1600.
-- Back/forward entre âncoras. Fullscreen API real via botão; explorar rede em fullscreen; saída sem overflow.
-- Sem JavaScript em 390×844: dez capítulos, seis disclosures de competências, menu nativo e contatos funcionais.
-- Todos os 21 originais preservam SHA-256 da auditoria. Noindex/robots bloqueado e canais comerciais corretos.
-
-## Correções da revisão
-
-Coluna da palavra comunicação em 1920; indicador de disclosure rotacionado; títulos longos em tablet/360; fundo explícito dos painéis de especialistas; conclusão imediata do scrub ao selecionar; compensação única do header nas âncoras; curvas afastadas dos títulos; dash SVG em unidades reais sem vector-effect que encurtasse o desenho.
-
-## Performance local
-
-Loopback sem throttling, PerformanceObserver/Resource Timing. Não são Core Web Vitals de produção nem promessa de fps.
-
-| Tela | CLS inicial | LCP local | JS inicial |
-|---|---|---|---|
-| 1920×1080 | 0,00027 | 352 ms | ~217 KiB |
-| 1440×900 | 0,00056 | 192 ms | ~217 KiB |
-| 1366×768 | 0,00073 | 268 ms | ~217 KiB |
-| 768×1024 | 0 | 180 ms | ~173 KiB |
-| 390×844 | 0 | 176 ms | ~173 KiB |
-| 360×800 | 0 | 164 ms | ~173 KiB |
-
-GSAP/ScrollTrigger ~44 KiB somente desktop elegível; fontes locais ~66 KiB. Abertura tipográfica elimina o download de fotografia de hero. Poster inicial ~28 KiB. Vídeo preservado: WebM ~426 KiB, MP4 ~440 KiB, cerca de 78–79% menores que o original. Não servir vídeo original ou esticar proporção.
-
-## Evidências e limites
-
-docs/qa/results.json registra a execução; v2-opening-*.png, v2-network-*.png, v2-expert-*.png, capítulos, fullscreen, reduced-motion, no-js e v2-preview.png guardam capturas. Arquivos QA ignorados pelo versionamento local. Histórico V1 em docs/history/v1.
-
-Não testados Safari/Firefox nem aparelhos/projetores físicos. Copy, marca, direitos, biografias e domínio seguem pendentes em TODO-CONTENT.md. Etapa Git documentada em VERSIONING.md; publicação do site não realizada.
+CLS inicial0–0,000731, LCP local156–628ms; não são métricas de produção ou garantia de fps. Axe auxilia revisão, não certifica conformidade. Aba inativa eSave-Data simulados; Safari/Firefox e dispositivos/projetores físicos não testados. Copy/contextos provisórios e confirmações institucionais emTODO-CONTENT.md.

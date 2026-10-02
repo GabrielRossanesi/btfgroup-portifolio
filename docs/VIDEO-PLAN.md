@@ -25,3 +25,7 @@ Derivados preservados: practice.webm (~426 KiB), practice.mp4 (~440 KiB), practi
 preload=none; sources anexadas somente quando desktop com pointer:fine vê o vídeo, ou após play explícito. Nenhum autoplay/download antecipado em mobile, reduced motion ou Save-Data. IntersectionObserver e visibilitychange pausam fora da viewport/aba. Pausa do usuário persiste no retorno. playsInline/muted/loop e controles nativos após carregar; poster e botão permanecem se play recusado. Sem JS: link direto ao filme silencioso.
 
 GSAP não controla o player nem currentTime. Se houver áudio informativo futuramente, validar transcrição/legendas antes de publicar. Direitos/contexto continuam em TODO-CONTENT.md.
+
+## Atualização V3
+
+Plano anterior preservado como histórico. Dois vídeos finais emcapítulos distintos: lecture/Como epractice/mural. Curadoria doscincooriginais,players/condições/pesos eQA emVIDEO-PLAN-V3.md eVISUAL-QA-V3.md.

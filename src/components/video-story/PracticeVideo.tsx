@@ -2,57 +2,72 @@
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
 
-type Connection = { saveData?: boolean };
-export function PracticeVideo() {
+type Connection = EventTarget & { saveData?: boolean };
+let activePlayer: HTMLVideoElement | null = null;
+export function PracticeVideo({ name = "practice" }: { name?: keyof typeof site.videos }) {
+  const metadata = site.videos[name];
   const video = useRef<HTMLVideoElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [playing, setPlaying] = useState(false);
   const pausedByUser = useRef(false);
-  const visible = useRef(false);
-  const explicitPlayback = useRef(false);
+  const intersecting = useRef(false);
+  const explicit = useRef(false);
+  const autoPause = useRef(false);
   useEffect(() => {
     const element = video.current;
     if (!element) return;
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
     const desktop = window.matchMedia("(min-width: 1024px) and (pointer: fine)");
-    const saveData = (navigator as Navigator & { connection?: Connection }).connection?.saveData;
-    const allowed = () => desktop.matches && !reduced.matches && !saveData;
-    const tryPlay = () => { if (visible.current && !document.hidden && !pausedByUser.current && (allowed() || explicitPlayback.current)) void element.play().catch(() => setPlaying(false)); };
-    const observer = new IntersectionObserver(([entry]) => {
-      visible.current = entry.isIntersecting;
-      if (visible.current && allowed()) { setLoaded(true); if (loaded) tryPlay(); }
-      else if (!visible.current) element.pause();
-      else if (explicitPlayback.current && loaded) tryPlay();
-    }, { threshold: .25 });
+    const connection = (navigator as Navigator & { connection?: Connection }).connection;
+    const allowed = () => desktop.matches && !reduced.matches && !connection?.saveData;
+    const shown = () => {
+      const scene = element.closest<HTMLElement>("[data-scene]");
+      return intersecting.current && (!scene || getComputedStyle(scene).visibility !== "hidden");
+    };
+    const pause = () => { if (!element.paused) { autoPause.current = true; element.pause(); } };
+    const update = () => {
+      if (!shown() || document.hidden || pausedByUser.current || (!allowed() && !explicit.current)) { pause(); return; }
+      if (!loaded) { setLoaded(true); return; }
+      activePlayer = element;
+      void element.play().catch(() => setPlaying(false));
+    };
+    const observer = new IntersectionObserver(([entry]) => { intersecting.current = entry.isIntersecting && entry.intersectionRatio >= .25; update(); }, { threshold: [0, .25, .5] });
     observer.observe(element);
-    const visibility = () => { if (document.hidden) element.pause(); else tryPlay(); };
-    const preference = () => { if (!allowed()) element.pause(); };
-    document.addEventListener("visibilitychange", visibility);
-    reduced.addEventListener("change", preference);
-    desktop.addEventListener("change", preference);
-    element.addEventListener("loadeddata", tryPlay);
-    if (loaded) { element.load(); tryPlay(); }
-    return () => { observer.disconnect(); element.pause(); document.removeEventListener("visibilitychange", visibility); reduced.removeEventListener("change", preference); desktop.removeEventListener("change", preference); element.removeEventListener("loadeddata", tryPlay); };
+    const other = (event: Event) => { if ((event as CustomEvent).detail !== element) pause(); };
+    document.addEventListener("visibilitychange", update);
+    document.addEventListener("btf:scene", update);
+    document.addEventListener("btf:video-play", other);
+    reduced.addEventListener("change", update);
+    desktop.addEventListener("change", update);
+    connection?.addEventListener("change", update);
+    element.addEventListener("loadeddata", update);
+    if (loaded) { element.load(); update(); }
+    return () => {
+      observer.disconnect(); pause(); if (activePlayer === element) activePlayer = null;
+      document.removeEventListener("visibilitychange", update); document.removeEventListener("btf:scene", update); document.removeEventListener("btf:video-play", other);
+      reduced.removeEventListener("change", update); desktop.removeEventListener("change", update); connection?.removeEventListener("change", update); element.removeEventListener("loadeddata", update);
+    };
   }, [loaded]);
   const toggle = () => {
     const element = video.current;
     if (!element) return;
-    if (!element.paused) { pausedByUser.current = true; explicitPlayback.current = false; element.pause(); }
+    if (!element.paused) { pausedByUser.current = true; explicit.current = false; element.pause(); }
     else {
-      pausedByUser.current = false; explicitPlayback.current = true;
+      pausedByUser.current = false; explicit.current = true;
       if (!loaded) setLoaded(true);
       else void element.play().catch(() => setPlaying(false));
     }
   };
-  return <div className="practice-player">
-    <video ref={video} className="practice-video" width="478" height="850" poster="/media/practice-poster.webp" playsInline muted loop controls={loaded} preload="none" aria-label={site.ui.video.label} onPlay={() => setPlaying(true)} onPause={() => { setPlaying(false); if (visible.current && !document.hidden) pausedByUser.current = true; }}>
-      {loaded && <><source src="/media/practice.webm" type="video/webm" /><source src="/media/practice.mp4" type="video/mp4" /></>}
-      {site.ui.video.fallback}
+  return <div className="practice-player" data-video={name}>
+    <video ref={video} className="practice-video" width={metadata.width} height={metadata.height} poster={`/media/${name}-poster.webp`} playsInline muted loop controls={loaded} preload="none" aria-label={metadata.label}
+      onPlay={() => { setPlaying(true); activePlayer = video.current; document.dispatchEvent(new CustomEvent("btf:video-play", { detail: video.current })); }}
+      onPause={() => { setPlaying(false); if (autoPause.current) autoPause.current = false; else if (intersecting.current && !document.hidden) pausedByUser.current = true; }}>
+      {loaded && <><source src={`/media/${name}.webm`} type="video/webm" /><source src={`/media/${name}.mp4`} type="video/mp4" /></>}{metadata.description}
     </video>
     <button className="video-toggle" type="button" onClick={toggle} aria-label={playing ? site.ui.video.pause : site.ui.video.play}>
-      {playing ? <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="M7 5h3v14H7zm7 0h3v14h-3z" fill="currentColor" /></svg> : <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d="m8 4 12 8-12 8z" fill="currentColor" /></svg>}
+      <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d={playing ? "M7 5h3v14H7zm7 0h3v14h-3z" : "m8 4 12 8-12 8z"} fill="currentColor" /></svg>
       {playing ? site.ui.video.paused : site.ui.video.watch}<span className="video-silent">{site.ui.video.silent}</span>
     </button>
-    <noscript><p className="video-noscript">{site.ui.video.fallback} <a href="/media/practice.mp4">{site.ui.video.link}</a>.</p></noscript>
+    <noscript><p className="video-noscript">{metadata.description} <a href={`/media/${name}.mp4`}>{site.ui.video.link}</a>.</p></noscript>
   </div>;
 }

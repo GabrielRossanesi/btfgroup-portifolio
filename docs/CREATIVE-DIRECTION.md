@@ -1,40 +1,22 @@
-# BTF Group — direção criativa V2
+# Direção criativa V3
 
-02/10/2026. Produto: apresentação institucional e comercial digital interativa. Copy e relações entre competências são PROVISÓRIAS. Histórico integral V1 em docs/history/v1.
+02/10/2026. Plano registrado após inspeção dos dez capítulos publicados em desktop/mobile, revisão do código, das skills frontend-design/gsap-scrolltrigger e dos 21 originais, antes dos componentes. Evidências: docs/qa/v3/before-*.png, baseline-images.json, docs/audit/v3-before-quality.png. V2 em docs/history/v2.
 
-## Diagnóstico e conceito
+A abertura publicada é tipográfica. Preservar BTF GROUP, escala, azul profundo e Conhecimento encontra voz. O nome interno hero designa a fotografia de prática, não a abertura. Não inserir nova fotografia no primeiro capítulo.
 
-A V1 tinha engenharia apropriada, mas hero fotográfico com dois CTAs, sequência de blocos e manifesto de palavras intercambiáveis sustentavam uma landing page. Sua assinatura trocava palavras; não explicava um sistema. Os especialistas pareciam galeria.
+Causas comprovadas: WebP quality82 recomprime JPEG/WhatsApp e retratos já WebP; fontes1600 ocupam1920CSS; retratos~849×680 não suportamDPR2; mobile hero-800 cobre390×565 e precisaria~1699px devido a object-fit. sizes descreve a caixa mas ignora ampliação interna. Não é thumbnail indevida no desktop nem Next/Image: não há otimizador runtime.
 
-Conceito V2: **uma ideia ganha espaço**. A abertura concentra a identidade; Comunicação conduz ao desenvolvimento profissional. O scroll expande esse núcleo em uma constelação de competências. Depois, conceito dá lugar à prática, pessoas e contextos empresariais. Origem chega após compreender a proposta. Contato encerra a conversa. Cada capítulo deve permanecer aberto enquanto o apresentador conversa, e fazer sentido ao visitante autônomo.
+Conceito: da voz ao encontro, do encontro à organização. Manter #102C39 profundo, #165DDB azul, #F5F6F7 papel, branco e #83A8B9 linhas; Bricolage para conceitos, Manrope para contexto. Identidade surge do vocabulário reorganizado e de registros reais com espaço. Sem cards, 3D, biblioteca nova ou captura da roda.
 
-## KEEP / REFACTOR / REPLACE
+Limites de composição para DPR2: horizontais1600 até800CSS; retratos até512CSS e ratio original;633px até300CSS; vídeos464/478 até232/239CSS. Tipografia ocupa o espaço restante. Sem upscale/sharpen/AI.
 
-| Decisão | Elementos | Motivo |
-|---|---|---|
-| KEEP | Next/React/TypeScript, dependências, fontes locais, Media/Logo/Arrow, WebP, vídeo silencioso e sua política, metadata, robots/sitemap, contatos | Base testada e dados conhecidos |
-| REFACTOR | Navigation, site.ts, ScrollExperience, trilho de especialistas, CSS responsivo, QA, documentação | Capítulos, projeção, fatos opcionais e ownership |
-| REPLACE | HeroTitle, Manifesto, composição page.tsx, soluções/galeria/CTA V1 | Substituir hierarquia e produto, sem código morto ou acúmulo de overrides |
+1. Abertura reconhecível; Comunicação orienta a entrada no núcleo.
+2. Rede existente cresce e explica a relação ativa. Clímax reagrupa seis termos; Comunicação amplia para próximo capítulo.
+3. O que: quatro cenas curtas Comunicação/Oratória/Argumentação/Presença. Palavra domina, desloca e cede a próxima; foto contextual e texto.
+4. Como: aprender/experimentar/trocar são direção editorial PROVISÓRIA. Foto lateral→aula vertical→participação. Não método oficial.
+5. Especialistas: engenharia horizontal preservada, retratos íntegros menores e nomes dominantes.
+6. Em ação: mural espacial com turma/livro/microfone/público/vídeo. Poucos deslocamentos, sem galeria.
+7. Empresa: rede com Sua empresa/Liderança/Comercial/Jurídico/Equipes; competências contextualizadas, sem cases.
+8–10. Formatos/origem/conversa factuais preservados; foto origem contida.
 
-As três skills instaladas foram relidas: frontend-design, frontend-skill e gsap-scrolltrigger. Defaults de landing page da frontend-skill cedem ao produto explicitamente definido pela cliente. Retêm-se tipografia, mídia real e movimento significativo. ScrollTrigger constrói a assinatura, Motion somente o menu. Não instalar novas bibliotecas.
-
-## Linguagem e roteiro
-
-Azul profundo #102C39, azul #165DDB, papel frio #F5F6F7, branco. Paleta proposta a partir do acervo, ainda sem manual oficial. Bricolage Grotesque e Manrope locais. Fotografias em planos grandes, cantos retos, sem cards de benefícios, badges, métricas ou símbolos jurídicos decorativos.
-
-1. Abertura: BTF GROUP monumental, frase curta e Comunicação no limiar seguinte. Sem CTA ou fotografia competindo com a marca.
-2. Desenvolvimento profissional: núcleo em duas linhas e seis competências em escalas distintas. Curvas finas, sem caixas ou setas hierárquicas. Descrição permanece na base.
-3. O que desenvolvemos: clareza, presença e argumento, três atos verticais com aplicações.
-4. Como desenvolvemos: participação em foto ampla e vídeo vertical contido; prática observável, sem metodologia inventada.
-5. Especialistas: Claudia Trajano, Francisco Barbosa, Luís Flora. Uma pessoa por tela; biografia desconhecida omitida.
-6. BTF em ação: turma ampla e foto vertical de aula; pausa visual, sem miniaturas.
-7. Para sua empresa: relação explorável área→competências→contextos, sem resultados prometidos.
-8. Formatos: dois produtos nomeados conhecidos; disponibilidade consultada com a BTF. Futuros formatos unpublished.
-9. Nossa origem: união dos três profissionais e relação com Júri Simulado do Tribunal de Justiça; sem inventar cronologia ou tribunal.
-10. Conversa: fechamento, WhatsApp e e-mail reais.
-
-## Apresentação e revisão
-
-Navegação nativa de dez capítulos, índice atual discreto, tela cheia desktop. Âncoras atravessam pins corretamente; controles posicionam especialistas. Sem captura da roda, snap ou avanço forçado. Projeção em 1920×1080, 1440×900 e 1366×768, corpo legível e títulos amplos. Mobile/tablet editorial vertical: rede em disclosures, especialistas empilhados, aplicações completas. Sem JS/reduced motion: conteúdo e controles nativos continuam presentes.
-
-Critério: rede nasce, conectores desenham, palavras ocupam posições e especialistas ocupam telas. Não basta aplicar fades. Nenhum TODO visível. Marca, copy, direitos e domínio permanecem em TODO-CONTENT.md.
+Revisão do plano: acrescentar fades às seções antigas foi rejeitado porque não transforma a narrativa. Foto fullscreen foi rejeitada por exceder fontes. Movimento concentra-se em palavras, enquadramentos e relações. Mobile mantém sequência/progresso sem pins; reduced mostra todas cenas sem autoplay. Copy nova PROVISÓRIA; não inferir identidades. Sem commit/push/deploy.

@@ -35,11 +35,13 @@ export const site = {
   },
   competencies: {
     intro: "Do conhecimento à expressão.",
-    acts: [
-      { title: "Clareza.", statement: "Uma ideia precisa encontrar o outro.", description: "Organizar a mensagem, escolher as palavras e conectar conhecimento a compreensão.", contexts: ["Reuniões", "Comunicação interna", "Escrita profissional"], media: null as string | null },
-      { title: "Presença.", statement: "A mensagem também está em quem fala.", description: "Voz, expressão e postura na construção de uma comunicação consciente.", contexts: ["Apresentações", "Liderança", "Fala em público"], media: "hero" },
-      { title: "Argumento.", statement: "Sustentar ideias. Ampliar perspectivas.", description: "Raciocínio, diálogo e intenção para conversas que exigem mais que informação.", contexts: ["Negociação", "Comercial", "Contextos jurídicos"], media: null as string | null },
+    scenes: [
+      { title: "Comunicação", statement: "Uma ideia precisa encontrar o outro.", description: "Organizar a mensagem e conectar conhecimento a compreensão.", context: "Reuniões, comunicação interna, escrita profissional.", media: "hero" },
+      { title: "Oratória", statement: "Conhecimento que ganha voz.", description: "Estruturar a fala e apresentar uma mensagem para diferentes públicos.", context: "Apresentações, fala em público, liderança.", media: "action" },
+      { title: "Argumentação", statement: "Sustentar ideias. Ampliar perspectivas.", description: "Raciocínio, diálogo e intenção para construir um ponto de vista.", context: "Negociação, comercial, contextos jurídicos.", media: "legal" },
+      { title: "Presença", statement: "A mensagem também está em quem fala.", description: "Conectar conteúdo, voz e postura em uma situação de comunicação.", context: "Expressão, escuta, participação.", media: "action-detail" },
     ],
+    bridge: "Prática.",
   },
   practice: {
     title: ["Conhecimento", "em prática."],
@@ -47,6 +49,12 @@ export const site = {
     filmTitle: ["A voz ocupa", "a sala."],
     filmDescription: "Falar, escutar, experimentar. Um registro real da interação entre participantes.",
     caption: "Participação e troca no acervo BTF Group.",
+    scenes: [
+      { title: "Aprender.", text: "Ideias apresentadas. Perspectivas compartilhadas.", media: "action", video: null },
+      { title: "Experimentar.", text: "A voz ocupa a sala. A comunicação acontece diante de outras pessoas.", media: null, video: "lecture" },
+      { title: "Trocar.", text: "Entre quem fala e quem escuta, há espaço para participar.", media: "hero", video: null },
+    ],
+    bridge: "Pessoas.",
   },
   expertsIntro: "As pessoas por trás da BTF.",
   experts: [
@@ -54,11 +62,18 @@ export const site = {
     { id: "francisco", name: "Francisco Barbosa", lines: ["Francisco", "Barbosa"], image: "francisco", bio: null as string | null, specialty: null as string | null },
     { id: "luis", name: "Luís Flora", lines: ["Luís", "Flora"], image: "luis", bio: null as string | null, specialty: null as string | null },
   ],
-  action: { title: "O encontro faz parte.", caption: "Pessoas. Ideias. Aprendizado compartilhado.", detail: "A comunicação acontece entre pessoas." },
+  action: { title: "O encontro faz parte.", caption: "Pessoas. Ideias. Aprendizado compartilhado.", detail: "A comunicação acontece entre pessoas.", bridge: "Sua equipe.", bookCaption: "Encontros que continuam na conversa.", microphoneCaption: "A palavra em diferentes ambientes.", videoCaption: "Falar. Escutar. Participar.", people: "Pessoas.", expertBridge: "Encontro." },
   business: {
     title: ["Onde a comunicação", "encontra o trabalho."],
     intro: "Um ponto de partida para conversar com RH, T&D e liderança sobre os contextos da sua equipe.",
     relationLabel: "Competências em conexão",
+    core: ["Sua", "empresa"],
+    contexts: [
+      { area: "Liderança", competencies: ["Comunicação", "Presença", "Escuta"], context: "Dar direção, compartilhar decisões e abrir espaço para conversas com a equipe.", examples: "Reuniões e apresentações.", x: 22, y: 18 },
+      { area: "Comercial", competencies: ["Argumentação", "Persuasão", "Escuta"], context: "Compreender necessidades e apresentar propostas com clareza.", examples: "Negociação e atendimento.", x: 79, y: 25 },
+      { area: "Jurídico", competencies: ["Argumentação", "Oratória", "Comunicação"], context: "Organizar raciocínios e comunicar ideias em contextos jurídicos.", examples: "Exposição de argumentos e diálogo.", x: 80, y: 79 },
+      { area: "Equipes", competencies: ["Clareza", "Comunicação", "Escuta"], context: "Conectar pessoas e informações no cotidiano da organização.", examples: "Comunicação interna e colaboração.", x: 22, y: 80 },
+    ],
     applications: [
       { area: "Liderança", competencies: ["Comunicação", "Presença", "Escuta"], context: "Dar direção, compartilhar decisões e conduzir conversas com a equipe." },
       { area: "Reuniões", competencies: ["Clareza", "Argumentação", "Escuta"], context: "Apresentar pontos de vista, ouvir perspectivas e organizar a troca de ideias." },
@@ -93,6 +108,7 @@ export const site = {
     skip: "Pular para o conteúdo", home: "BTF Group — início", chapters: "Capítulos", chapterNav: "Navegação por capítulos", current: "Capítulo atual",
     fullscreen: "Tela cheia", exitFullscreen: "Sair da tela cheia", fullscreenError: "O navegador não permitiu tela cheia. A apresentação continua disponível.",
     expertNav: "Selecionar especialista", expertAbout: "Sobre", back: "Voltar à abertura",
+    competencyNav: "Explorar competências", practiceNav: "Explorar registros de prática", businessNav: "Explorar contextos para sua empresa",
     video: { label: "Registro silencioso de uma apresentação com interação entre participantes", fallback: "O registro mostra uma pessoa apresentando e interagindo com o público em uma sala de treinamento.", play: "Reproduzir vídeo", pause: "Pausar vídeo", watch: "Assistir", paused: "Pausar", silent: "Sem áudio", link: "Assistir ao vídeo silencioso" },
   },
   media: {
@@ -102,6 +118,14 @@ export const site = {
     experience: "Turma reunida em uma sala de formação",
     origin: "Participantes reunidos em uma sala de educação prática",
     portraitPrefix: "Retrato institucional de",
+    "action-detail": "Vista entre as cadeiras de uma sala durante uma apresentação",
+    legal: "Pessoa gesticula ao microfone em uma mesa diante de bandeiras",
+    book: "Duas pessoas em uma sala seguram um livro durante um encontro",
+    microphone: "Pessoa fala ao microfone em um ambiente institucional de madeira",
+  },
+  videos: {
+    lecture: { label: "Registro silencioso de uma apresentação diante de uma projeção sobre oratória", description: "Uma pessoa apresenta diante de uma turma e de uma projeção.", width: 464, height: 832 },
+    practice: { label: "Registro silencioso de interação entre uma pessoa que apresenta e participantes", description: "Uma pessoa circula e conversa diante de participantes em uma sala.", width: 478, height: 850 },
   },
 };
 export function getContactUrl() {

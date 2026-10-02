@@ -50,3 +50,7 @@ P1 = curadoria principal; P2 = reserva útil; P3 = não selecionado. Tamanho em 
 ## Uso V2 (substitui os destinos de composição V1 da tabela)
 
 A abertura agora é tipográfica. hero/09.04.27 (3) ocupa o capítulo Como desenvolvemos; experience/09.04.26 e action-detail/09.04.27 (2) compõem BTF em ação. Retratos nomeados ocupam painéis individuais de Especialistas. origin/09.04.27 (4) permanece na origem. Vídeo 09.04.28 fica no capítulo de prática, vertical e contido. action/09.04.27 é derivado preservado em reserva, sem download pela interface V2. Logo, fontes, demais originais e hashes preservados. Nenhuma identidade factual nova inferida.
+
+## Atualização V3
+
+A tabela acima preserva a curadoria V1/V2 e não representa os usos finais V3. Estado atual dos21originais,14usados/5reservas/2não usados e razões em ASSET-USAGE-V3.md; variantes/dimensões/pesos/120instâncias em MEDIA-AUDIT-V3.md. Todosoriginais intactos. Pipeline94 eWebP original copiado sem recodificação; sem ampliar fontes.

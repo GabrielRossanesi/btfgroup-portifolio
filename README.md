@@ -1,10 +1,10 @@
-# BTF Group — apresentação digital V2
+# BTF Group — apresentação digital V3
 
-Apresentação institucional e comercial interativa, para reuniões conduzidas e navegação autônoma. Next.js App Router, React, TypeScript, Tailwind CSS, Motion e GSAP/ScrollTrigger. V1 preservada em docs/history/v1. Repositório: https://github.com/GabrielRossanesi/btfgroup-portifolio. Publicação do site não realizada.
+Apresentação institucional/comercial para reunião conduzida e navegação autônoma. Next.js App Router, React, TypeScript, Tailwind, Motion e GSAP/ScrollTrigger. Abertura preservada; quatro capítulos reconstruídos, rede evoluída e mídia conferida em DPR2. V3 e correções pontuais validadas; repositório: [BTF Group](https://github.com/GabrielRossanesi/btfgroup-portifolio). Histórico V1/V2 em docs/history.
 
 ## Executar
 
-Node validado: 24.14.0. Na raiz:
+Node validado:24.14.0. Na raiz:
 
 ```powershell
 npm.cmd ci
@@ -14,32 +14,34 @@ npm.cmd run build
 npm.cmd run start
 ```
 
-Prévia: http://127.0.0.1:3000. Hostname limitado ao computador local. npm.cmd evita a política de execução de scripts PowerShell.
+Prévia http://127.0.0.1:3000. Host limitado ao computador local; npm.cmd evita bloqueio PowerShell de npm.ps1.
 
 ## Apresentar e editar
 
-Menu Capítulos acessa dez momentos; indicador discreto acompanha o capítulo. Tela cheia no desktop via botão, saída pelo botão/Escape do navegador. Scroll nativo. Desenvolvimento profissional constrói a rede; Explorar a rede ou focar um nó completa o desenho. Especialistas avançam pelo scroll ou pelos três controles de nomes. Áreas empresariais usam disclosures acessíveis.
+Menu Capítulos acessa dez momentos. Scroll nativo, tela cheia no desktop. Rede explica seis relações e reorganiza conceitos; O que apresenta quatro cenas; Como articula três camadas; especialistas mantêm trilho horizontal; mural reúne registros reais; empresa conecta quatro contextos. Controles funcionam por teclado. Mobile mostra todos artigos sem pin; reduced motion mantém conteúdo estático; semJS menu nativo e linksMP4.
 
-src/content/site.ts centraliza copy comercial, capítulos, competências/relações, alt/labels, especialistas e formatos. Copy é provisória. bio/specialty null são omitidos. Novos formatos têm published=false e só devem ser liberados quando confirmados. Produtos nomeados conhecidos: Workshop de Oratória e Mentoria Fale com Autoridade; disponibilidade consultada com a BTF.
+src/content/site.ts centraliza copy/alt/labels/contextos/especialistas/formatos. Copy comercial nova PROVISÓRIA; aprender/experimentar/trocar não são método oficial. bio/specialty null omitidos. Produtos conhecidos: Workshop de Oratória e Mentoria Fale com Autoridade; disponibilidade consultada com aBTF. Nenhum case/resultado/cliente inferido das fotos.
 
-Contatos confirmados: +55 11 99384-3003, contato@btfgroup.com.br. Links abrem canais oficiais, sem envio automático, formulário ou coleta de dados.
+Contatos confirmados:+55 11 99384-3003,contato@btfgroup.com.br. Links abrem canais sem envio automático.
 
-## Domínio
+## Configuração pública opcional
 
 ```dotenv
 NEXT_PUBLIC_SITE_URL=https://dominio-oficial-confirmado
 NEXT_PUBLIC_CONTACT_URL=https://wa.me/5511993843003
 ```
 
-Domínio acima ilustrativo. Configurar somente origem HTTPS aprovada; reconstruir após mudar env pública. Sem domínio, noindex/nofollow e robots bloqueado; canonical/sitemap/schema URL e OG absoluto somente quando confirmado. Metadata/icon e mídia social preservados.
+Domínio ilustrativo. Configurar origem HTTPS aprovada e reconstruir. Sem domínio institucional confirmado, noindex/nofollow e robots bloqueado; canonical/sitemap/schema URL/OG absoluto somente quando confirmado. A URL Vercel de prévia foi usada na auditoria anterior às alterações, sem publicar V3.
 
-## Base preservada
+## Mídia e movimento
 
-21 originais em img intactos por SHA-256; derivados WebP responsivos em public/media, dimensões/srcset/lazy. Duas fontes variáveis locais, ~66 KiB, licenças em docs/licenses. Vídeo 478×850, 9 s, sem áudio, WebM ~426 KiB/MP4 ~440 KiB; só carrega quando necessário, pausa fora da viewport e preserva decisão do usuário.
+21 originais em img intactos por SHA-256;14 usados,5reservas,2não usados, com razões em ASSET-USAGE-V3.md.11fotos responsivas+logo+2vídeos+posters+OG,55arquivos/7,73MiB empublic/media. WebP94 direto de JPEG original; maior retratoWebP copiado sem recodificação. Dimensões/srcset/sizes/contain e limites CSS garantem densidade disponível emDPR2. Não ampliar fonte nem modificar img. src/content/media.ts é gerado pelo pipeline.
 
-Não modificar img. Scripts audit-assets.py e prepare-media.py reproduzem preparação; dependem de Pillow/imageio-ffmpeg. Derivados/fontes já incluídos. write-inventory.py pertence à preparação V1 e não deve ser executado para gerar documentos V2.
+lecture464×832/7s no Como; practice478×850/9s no mural. Sources condicionais; somente um player toca. Pausa fora da cena/viewport, aba inativa e decisão humana preservada. Mobile/reduced/Save-Data: poster e play explícito. Sem áudio, sem GSAP controlar currentTime.
 
-GSAP importado dinamicamente somente ≥1024 px, altura ≥700, pointer:fine e movimento permitido. matchMedia reverte estilos/pins/listeners no resize/preferência. Mobile/reduced: conteúdo final legível, sem pin; sem JS: menu e disclosures nativos. Motion somente opacity do painel do menu; sem disputa de transforms, snap ou captura de roda.
+Scripts audit-assets.py/prepare-media.py usam Pillow/imageio-ffmpeg; derivados/fontes incluídos para executar sem pipeline. report-media-v3.py gera curadoria/auditoria a partir de manifests e QA. write-inventory.py pertence àV1, não usar para substituir documentos V3. Duas fontes locais e licenças preservadas.
+
+GSAP dinâmico somente≥1024×700,pointer fine e movimento permitido. Cinco pins scoped, matchMedia com cleanup; aguarda fontes, preserva posição no reload/resize e resolve âncoras reais. Mobile IO e CSS sem pins. Motion somente menu; não há disputa de transforms, captura de roda ou smoother.
 
 ## Validar
 
@@ -47,24 +49,23 @@ GSAP importado dinamicamente somente ≥1024 px, altura ≥700, pointer:fine e m
 npm.cmd run lint
 npm.cmd run typecheck
 npm.cmd run build
-# Servidor local aberto:
+# Servidor de produção local aberto:
 npm.cmd run qa
+npm.cmd run qa:story
 ```
 
-QA usa Edge headless isolado, Playwright/axe, sem perfil do usuário. Seis viewports, rede/teclado/capítulos/fullscreen/resize/reduced/no-JS/vídeo/hash dos originais. Capturas/resultados em docs/qa, resumo docs/QA-REPORT.md. QA_URL permite outra URL local.
+Edge headless isolado, sem perfil do usuário. Oito cenários incluindo1920/390DPR2;47+11grupos, axe, densidade real das imagens, navegação/motion/fallbacks/vídeos/hash dos21originais. QA_URL permite outra URL local. Resultados/capturas emdocs/qa/v3 ignoradosGit. Instalação/build/start independem deimg; preparar mídia e verificar hashes completos exigem acervo original local. Aba inativa/Save-Data simulados. Safari/Firefox/aparelhos/projetores físicos não testados.
 
-O Git inclui os derivados utilizados pela V2, fontes e licenças. O arquivo de origem img, ferramentas locais, arquivos .env* (inclusive o exemplo local), capturas geradas e a foto otimizada de reserva action-* não são enviados. Nenhum desses arquivos foi apagado. Instalação, build e execução do site independem de img; scripts de preparação e a etapa de hashes do QA completo exigem restaurar o acervo original local. As variáveis opcionais estão documentadas acima e podem ser criadas manualmente em .env.local.
+Git mantém proteção para originais, env, caches, logs, node_modules, ferramentas locais e capturas. action agora efetivamente usada tem derivados apropriados para futuro versionamento. Nenhum original removido; sem nova dependência. Os relatórios de entrega preservam o estado da revisão local anterior à autorização de versionamento.
 
-ESLint 9.39.5 mantido pela compatibilidade dos plugins oficiais Next; não há overrides nem novas dependências. Histórico excluído do TypeScript, pois suas cópias não fazem parte da aplicação.
+## Documentação
 
-## Documentos
+- DELIVERY-V3: relatório dos18itens solicitados e CHANGES-V3: lista literal de arquivos.
+- VISUAL-QA-V3/QA-REPORT: resultados, correções, evidências e limites.
+- MEDIA-AUDIT-V3: cada variante e120instâncias reais por viewport/DPR.
+- ASSET-USAGE-V3/VIDEO-PLAN-V3:21originais, curadoria e players.
+- CREATIVE-DIRECTION/CONTENT-MAP/MOTION-SYSTEM: planos registrados antes dos componentes e engenharia final.
+- ASSET-INVENTORY/VIDEO-PLAN: inventário histórico com referência àV3.
+- TODO-CONTENT: confirmações editoriais existentes.
 
-CREATIVE-DIRECTION: diagnóstico, KEEP/REFACTOR/REPLACE, conceito/wireframe.
-CONTENT-MAP: capítulos e status editorial.
-MOTION-SYSTEM: estados, ownership, triggers, cleanup e fallbacks.
-ASSET-INVENTORY / VIDEO-PLAN: auditoria e usos.
-TODO-CONTENT: confirmações da cliente.
-DELIVERY-V2: relatório completo da reconstrução e arquivos.
-QA-REPORT: resultados e limites da validação.
-
-Skills frontend-design, frontend-skill e gsap-scrolltrigger relidas; defaults de landing page cedem à apresentação definida no briefing. Aprovar copy, direitos, marca e domínio antes de publicar.
+Skills frontend-design e gsap-scrolltrigger aplicadas àV3. Documentação e pipeline descrevem decisões específicas deste portfólio.

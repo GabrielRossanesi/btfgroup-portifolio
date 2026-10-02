@@ -1,20 +1,20 @@
-# Mapa de conteúdo V2
+# Mapa de conteúdo V3
 
-Copy comercial e relações pedagógicas: PROVISÓRIO. Fatos conhecidos: briefing/acervo e contato informado pela cliente. Histórico V1 em docs/history/v1.
+Plano anterior à implementação. Copy/relacionamentos novos PROVISÓRIOS, centralizados em src/content/site.ts. Fatos limitados ao briefing, nomes de especialistas, dois projetos conhecidos e contatos confirmados.
 
-| Capítulo | Mensagem / mídia | Interação | Status / dispositivo |
-|---|---|---|---|
-| 01 Abertura | BTF GROUP; conhecimento encontra voz | Continuidade para Comunicação | Copy provisória; mobile duas linhas |
-| 02 Desenvolvimento | Núcleo + Comunicação, Oratória, Argumentação, Persuasão, Presença, Escuta | Construção GSAP e exploração | Relações provisórias; desktop pin curto; mobile/reduced/no-JS disclosures completos |
-| 03 O que desenvolvemos | Clareza, presença, argumento | Três atos verticais | Organização editorial provisória, sem catálogo |
-| 04 Como desenvolvemos | Foto hero V1 em cena; vídeo 09.04.28 | Reprodução condicional | Registro real; sem afirmar identidades/metodologia |
-| 05 Especialistas | Três nomes/retratos conhecidos | Trilho desktop e controles individuais | bio/specialty null omitidos; mobile vertical |
-| 06 BTF em ação | experience e action-detail | Pausa visual no fluxo | Acervo real; evento/data/local não inventados |
-| 07 Para sua empresa | Liderança, reuniões, apresentações, comercial, negociação, atendimento, jurídico, comunicação interna | Disclosures área→competências→contexto | Relações provisórias, sem cases/promessas |
-| 08 Formatos | Workshop de Oratória; Mentoria Fale com Autoridade | Consulta ao canal oficial | Existência nomeada conhecida; disponibilidade não afirmada; futuros published=false |
-| 09 Nossa origem | União dos três profissionais; Júri Simulado | Texto curto e origin | Somente briefing, sem cronologia inventada |
-| 10 Conversa | Equipe, conhecimento, comunicação | WhatsApp/e-mail | Contatos confirmados, sem formulário |
+| Capítulo | Conteúdo / mídia | Transformação |
+|---|---|---|
+| Abertura | BTF GROUP, Conhecimento encontra voz, Comunicação | Palavra de passagem |
+| Desenvolvimento | Núcleo + seis conceitos | Construção, relação ativa, reagrupamento |
+| O que | Comunicação/hero; Oratória/action; Argumentação/legal; Presença/action-detail | Termo dominante e enquadramento em quatro cenas |
+| Como | Aprender/action; experimentar/lecture; trocar/hero | Foto→aula vertical→público |
+| Especialistas | Claudia, Francisco, Luís/retratos | Trilho individual, ratio original |
+| Em ação | experience, book, microphone, action-detail, legal; practice | Mural espacial respeitando cada fonte |
+| Empresa | Sua empresa; Liderança, Comercial, Jurídico, Equipes | Relação área→competências→contexto por scroll e seleção |
+| Formatos | Workshop de Oratória; Mentoria Fale com Autoridade | Consulta, disponibilidade não afirmada |
+| Origem | União dos três + Júri Simulado; origin | Sem cronologia/evento/local inventado |
+| Conversa | WhatsApp5511993843003; contato@btfgroup.com.br | Canais reais |
 
-Todo texto exibido, alt e label centralizado em src/content/site.ts. Competências possuem id/title/description/posição; especialistas bio/specialty opcionais; formatos published. Código filtra unpublished e omite fatos null. Relações empresariais não são testemunhos nem resultados.
+Aprender/experimentar/trocar não são método oficial ou promessa de feedback. Foto legal descreve pessoa ao microfone em mesa, sem provar case/atuação de identidade reconhecida. Livro não nomeado. Novos registros não recebem nomes por aparência.
 
-SSR: âncoras e menu details. Rede final possui disclosures nativos em fallback; mobile usa os mesmos textos. Áreas empresariais usam details e funcionam sem JS. Domínio não confirmado: preservar noindex/nofollow/robots bloqueado. WhatsApp 5511993843003; contato@btfgroup.com.br. Nenhum TODO deve aparecer na interface.
+Mobile/reduced/noJS mostram cenas e relações completas; vídeo após play. Futuros formatos unpublished, bio/specialty null omitidos. Noindex/robots preservados até domínio institucional confirmado.

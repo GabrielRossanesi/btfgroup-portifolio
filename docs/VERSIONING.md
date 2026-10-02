@@ -25,3 +25,14 @@ Lint, TypeScript e build de produção aprovados. Servidor local iniciado novame
 Não foram alterados frontend, estilos, animações ou comportamento do produto nesta etapa. Somente Git, exclusões, atributos e documentação de versionamento.
 
 Mensagem do commit: feat: build BTF Group corporate portfolio experience. A identificação definitiva do commit e o estado do envio constam no histórico Git e na resposta final da execução. Publicação do código no GitHub não constitui deploy do site.
+
+
+## Atualização V3 e QA pontual — 02/10/2026
+
+Publicação das alterações autorizada pelo usuário após revisão local. Branch main, origin https://github.com/GabrielRossanesi/btfgroup-portifolio.git. Fetch prévio confirmou histórico alinhado; envio normal, sem force. Os relatórios anteriores registram o estado local à época da entrega, antes desta autorização.
+
+Incluídos frontend V3, correções Hero/rede/header/Conversa, scripts, configuração, documentação, histórico V2 e derivados usados. public/media contém55arquivos/7,73MiB; maior arquivo practice.mp4,1091814bytes. Não há candidato acima de5MiB. Os21originais (20,90MiB) permanecem locais e intactos; env, node_modules, .next, caches, logs, ferramentas/skills locais e evidências geradas continuam ignorados. A foto action agora efetivamente usada tem derivados incluídos.
+
+Varredura de todos os arquivos textuais candidatos: nenhum segredo literal identificado. Git diff --check aprovado. Lint, typecheck e build de produção aprovados. QA principal47grupos/oito cenários e pontual9grupos aprovados, zero errosJS/HTTP e zero violações axe. Originais preservam SHA-256. Safari/Firefox e dispositivos físicos não testados.
+
+Commit descritivo reúne V3 e QA pontual. Hash definitivo consta no histórico Git e na resposta final. Esta etapa envia código aoGitHub; nenhum comando manual de deploy é executado.

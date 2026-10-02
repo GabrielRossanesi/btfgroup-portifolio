@@ -58,9 +58,3 @@ docs/qa/
 docs/audit/*.jpg
 docs/audit/*.png
 docs/history/v1/qa-results.json
-
-# Optimized reserve photo, not used by the V2 application
-/public/media/action-480.webp
-/public/media/action-800.webp
-/public/media/action-1200.webp
-/public/media/action-1600.webp
