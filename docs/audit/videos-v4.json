@@ -1,0 +1,70 @@
+[
+  {
+    "name": "lecture",
+    "source": "WhatsApp Video 2026-10-02 at 09.04.25.mp4",
+    "start": 2,
+    "duration": 7,
+    "posterTime": 5,
+    "width": 464,
+    "height": 832,
+    "audio": false,
+    "fps": 24,
+    "upscale": false,
+    "files": {
+      "mp4": 696338,
+      "webm": 675927
+    },
+    "posterBytes": 36972
+  },
+  {
+    "name": "gesture",
+    "source": "WhatsApp Video 2026-10-02 at 09.04.25 (1).mp4",
+    "start": 0.1,
+    "duration": 2.4,
+    "posterTime": 1.2,
+    "width": 576,
+    "height": 1024,
+    "audio": false,
+    "fps": 24,
+    "upscale": false,
+    "files": {
+      "mp4": 331796,
+      "webm": 225182
+    },
+    "posterBytes": 43892
+  },
+  {
+    "name": "practice",
+    "source": "WhatsApp Video 2026-10-02 at 09.04.28.mp4",
+    "start": 0.3,
+    "duration": 8,
+    "posterTime": 1,
+    "width": 478,
+    "height": 850,
+    "audio": false,
+    "fps": 24,
+    "upscale": false,
+    "files": {
+      "mp4": 957079,
+      "webm": 794615
+    },
+    "posterBytes": 52778
+  },
+  {
+    "name": "exchange",
+    "source": "WhatsApp Video 2026-10-02 at 09.04.29.mp4",
+    "start": 58,
+    "duration": 10,
+    "posterTime": 64,
+    "width": 478,
+    "height": 850,
+    "audio": false,
+    "fps": 24,
+    "upscale": false,
+    "files": {
+      "mp4": 1010323,
+      "webm": 903999
+    },
+    "posterBytes": 56326
+  }
+]

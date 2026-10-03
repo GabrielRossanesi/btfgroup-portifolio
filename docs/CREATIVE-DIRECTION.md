@@ -1,22 +1,21 @@
-# Direção criativa V3
+# Direção criativa V4
 
-02/10/2026. Plano registrado após inspeção dos dez capítulos publicados em desktop/mobile, revisão do código, das skills frontend-design/gsap-scrolltrigger e dos 21 originais, antes dos componentes. Evidências: docs/qa/v3/before-*.png, baseline-images.json, docs/audit/v3-before-quality.png. V2 em docs/history/v2.
+## Tese
 
-A abertura publicada é tipográfica. Preservar BTF GROUP, escala, azul profundo e Conhecimento encontra voz. O nome interno hero designa a fotografia de prática, não a abertura. Não inserir nova fotografia no primeiro capítulo.
+A voz aparece entre pessoas reais. Uma apresentação corporativa para reunião conduzida ou leitura autônoma, com tipografia forte, registros humanos e uma mesma estrutura editorial em todos os capítulos. A abertura mantém Conhecimento encontra voz. e BTF / GROUP; nove fotografias ampliam imediatamente a dimensão do acervo.
 
-Causas comprovadas: WebP quality82 recomprime JPEG/WhatsApp e retratos já WebP; fontes1600 ocupam1920CSS; retratos~849×680 não suportamDPR2; mobile hero-800 cobre390×565 e precisaria~1699px devido a object-fit. sizes descreve a caixa mas ignora ampliação interna. Não é thumbnail indevida no desktop nem Next/Image: não há otimizador runtime.
+Bricolage Grotesque expressa a marca, Manrope organiza leitura e controles. Paleta: profundo #102c39, tinta #172f3b, papel #f5f6f7, branco #ffffff, interação #165ddb. Conversa permanece na família institucional, sem fundo elétrico. Grid de 12 colunas; gutter 5.3vw, máximo 102px; alinhamento à esquerda. Retratos, aulas, gestos e livro têm diferentes escalas e bleeds contidos, sem moldura de card, galeria, blur ou filtro que destrua o registro.
 
-Conceito: da voz ao encontro, do encontro à organização. Manter #102C39 profundo, #165DDB azul, #F5F6F7 papel, branco e #83A8B9 linhas; Bricolage para conceitos, Manrope para contexto. Identidade surge do vocabulário reorganizado e de registros reais com espaço. Sem cards, 3D, biblioteca nova ou captura da roda.
+## Hierarquia e fotografia
 
-Limites de composição para DPR2: horizontais1600 até800CSS; retratos até512CSS e ratio original;633px até300CSS; vídeos464/478 até232/239CSS. Tipografia ocupa o espaço restante. Sem upscale/sharpen/AI.
+Hero é capa tipográfica com camada fotográfica decorativa. Sala e participante são âncoras maiores; três retratos ficam separados por registros de ação. Fontes pequenas ganham quadros menores. O overlay combina gradientes navy verticais e horizontais, mantendo rostos e situações perceptíveis. Letras claras não dependem de regiões brancas das imagens.
 
-1. Abertura reconhecível; Comunicação orienta a entrada no núcleo.
-2. Rede existente cresce e explica a relação ativa. Clímax reagrupa seis termos; Comunicação amplia para próximo capítulo.
-3. O que: quatro cenas curtas Comunicação/Oratória/Argumentação/Presença. Palavra domina, desloca e cede a próxima; foto contextual e texto.
-4. Como: aprender/experimentar/trocar são direção editorial PROVISÓRIA. Foto lateral→aula vertical→participação. Não método oficial.
-5. Especialistas: engenharia horizontal preservada, retratos íntegros menores e nomes dominantes.
-6. Em ação: mural espacial com turma/livro/microfone/público/vídeo. Poucos deslocamentos, sem galeria.
-7. Empresa: rede com Sua empresa/Liderança/Comercial/Jurídico/Equipes; competências contextualizadas, sem cases.
-8–10. Formatos/origem/conversa factuais preservados; foto origem contida.
+Competências e prática conservam a dupla contexto + registro. Especialistas usam cenas individuais que coordenam nome e retrato na mesma linha de leitura. Movimento muda três registros verticais dentro de uma composição estável. Ação concentra duas turmas fora do mosaico; os lados alternam seguindo as mesmas colunas. Empresa transforma conceitos em contextos de trabalho. Formatos e origem diminuem o ritmo para leitura; conversa conclui com o CTA aprovado.
 
-Revisão do plano: acrescentar fades às seções antigas foi rejeitado porque não transforma a narrativa. Foto fullscreen foi rejeitada por exceder fontes. Movimento concentra-se em palavras, enquadramentos e relações. Mobile mantém sequência/progresso sem pins; reduced mostra todas cenas sem autoplay. Copy nova PROVISÓRIA; não inferir identidades. Sem commit/push/deploy.
+## Crítica e correções executadas
+
+Primeiro QA em 1920×1080: dois rostos coincidiam com os vazios de GROUP; máscara das mídias alcançava controles; vídeo contextual parecia excessivamente distante; header atrasava por frações de pixel; origem repetia a foto de turma e começava exibindo apenas teto. Fotos reposicionadas; máscaras limitadas à superfície do vídeo; vídeo de prática recentrado e ampliado onde a fonte permite; tolerância de 1px na leitura das âncoras; origem recomposta como um capítulo textual completo.
+
+DPR 2 revelou que sizes precisava incluir a escala 1.04. A última revisão com scroll nativo revelou que o trilho horizontal podia associar visualmente o próximo nome ao retrato anterior. Especialistas passaram a cenas verticais coordenadas; distância reduzida de 3840px para 1524px em 1920×1080. Dois contextos nunca dependem de nomes posicionados junto ao retrato errado.
+
+Plano anterior à implementação: PLAN-V4.md. Evidências e parecer final: VISUAL-QA-V4.md. V3 preservada em history/v3. Todas as frases comerciais novas são PROVISÓRIAS; não foram inventados clientes, resultados, depoimentos, identidades ou credenciais.

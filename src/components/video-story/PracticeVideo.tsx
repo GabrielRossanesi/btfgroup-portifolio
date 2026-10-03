@@ -1,4 +1,5 @@
 "use client";
+/* eslint-disable @next/next/no-img-element -- Local curated posters use native lazy loading before video activation. */
 import { useEffect, useRef, useState } from "react";
 import { site } from "@/content/site";
 
@@ -22,7 +23,7 @@ export function PracticeVideo({ name = "practice" }: { name?: keyof typeof site.
     const allowed = () => desktop.matches && !reduced.matches && !connection?.saveData;
     const shown = () => {
       const scene = element.closest<HTMLElement>("[data-scene]");
-      return intersecting.current && (!scene || getComputedStyle(scene).visibility !== "hidden");
+      return intersecting.current && (!scene || (!scene.inert && scene.getAttribute("aria-hidden") !== "true" && getComputedStyle(scene).visibility !== "hidden"));
     };
     const pause = () => { if (!element.paused) { autoPause.current = true; element.pause(); } };
     const update = () => {
@@ -34,8 +35,10 @@ export function PracticeVideo({ name = "practice" }: { name?: keyof typeof site.
     const observer = new IntersectionObserver(([entry]) => { intersecting.current = entry.isIntersecting && entry.intersectionRatio >= .25; update(); }, { threshold: [0, .25, .5] });
     observer.observe(element);
     const other = (event: Event) => { if ((event as CustomEvent).detail !== element) pause(); };
+    let sceneFrame = 0;
+    const sceneChanged = () => { cancelAnimationFrame(sceneFrame); sceneFrame = requestAnimationFrame(update); };
     document.addEventListener("visibilitychange", update);
-    document.addEventListener("btf:scene", update);
+    document.addEventListener("btf:scene", sceneChanged);
     document.addEventListener("btf:video-play", other);
     reduced.addEventListener("change", update);
     desktop.addEventListener("change", update);
@@ -43,8 +46,8 @@ export function PracticeVideo({ name = "practice" }: { name?: keyof typeof site.
     element.addEventListener("loadeddata", update);
     if (loaded) { element.load(); update(); }
     return () => {
-      observer.disconnect(); pause(); if (activePlayer === element) activePlayer = null;
-      document.removeEventListener("visibilitychange", update); document.removeEventListener("btf:scene", update); document.removeEventListener("btf:video-play", other);
+      observer.disconnect(); cancelAnimationFrame(sceneFrame); pause(); if (activePlayer === element) activePlayer = null;
+      document.removeEventListener("visibilitychange", update); document.removeEventListener("btf:scene", sceneChanged); document.removeEventListener("btf:video-play", other);
       reduced.removeEventListener("change", update); desktop.removeEventListener("change", update); connection?.removeEventListener("change", update); element.removeEventListener("loadeddata", update);
     };
   }, [loaded]);
@@ -59,11 +62,14 @@ export function PracticeVideo({ name = "practice" }: { name?: keyof typeof site.
     }
   };
   return <div className="practice-player" data-video={name}>
-    <video ref={video} className="practice-video" width={metadata.width} height={metadata.height} poster={`/media/${name}-poster.webp`} playsInline muted loop controls={loaded} preload="none" aria-label={metadata.label}
+    <div className="practice-screen">
+    <video ref={video} className="practice-video" width={metadata.width} height={metadata.height} style={{aspectRatio:`${metadata.width} / ${metadata.height}`}} poster={loaded ? `/media/${name}-poster.webp` : undefined} playsInline muted loop controls={loaded} preload="none" aria-label={metadata.label}
       onPlay={() => { setPlaying(true); activePlayer = video.current; document.dispatchEvent(new CustomEvent("btf:video-play", { detail: video.current })); }}
       onPause={() => { setPlaying(false); if (autoPause.current) autoPause.current = false; else if (intersecting.current && !document.hidden) pausedByUser.current = true; }}>
       {loaded && <><source src={`/media/${name}.webm`} type="video/webm" /><source src={`/media/${name}.mp4`} type="video/mp4" /></>}{metadata.description}
     </video>
+    {!loaded && <img className="practice-poster" src={`/media/${name}-poster.webp`} width={metadata.width} height={metadata.height} alt="" aria-hidden="true" loading="lazy" decoding="async"/>}
+    </div>
     <button className="video-toggle" type="button" onClick={toggle} aria-label={playing ? site.ui.video.pause : site.ui.video.play}>
       <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path d={playing ? "M7 5h3v14H7zm7 0h3v14h-3z" : "m8 4 12 8-12 8z"} fill="currentColor" /></svg>
       {playing ? site.ui.video.paused : site.ui.video.watch}<span className="video-silent">{site.ui.video.silent}</span>

@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { site } from "@/content/site";
+import { chapterTitle, site } from "@/content/site";
 import { Media } from "@/components/ui/Media";
 import { PracticeVideo } from "@/components/video-story/PracticeVideo";
 
@@ -48,7 +48,7 @@ export function BusinessChapter() {
   const { root, state, select } = useSceneChapter();
   return <section ref={root} id="empresa" className="business chapter scene-chapter" data-chapter data-scene-chapter="business" aria-labelledby="business-heading">
     <div className="scene-stage business-stage">
-      <header className="scene-header page-gutter"><div><p className="eyebrow">{site.chapters[6].title}</p><h2 id="business-heading">{site.business.title.join(" ")}</h2></div></header>
+      <header className="scene-header page-gutter"><div><p className="eyebrow">{chapterTitle("empresa")}</p><h2 id="business-heading">{site.business.title.join(" ")}</h2></div></header>
       <div className="business-system page-gutter">
         <div className="business-map"><svg viewBox="0 0 1000 700" preserveAspectRatio="none" aria-hidden="true">{site.business.contexts.map((c, i) => <path key={c.area} className={state.active === i ? "is-active" : ""} d={`M500 350 Q${c.x < 50 ? 150 : 850} 350 ${c.x * 10} ${c.y * 7}`} />)}</svg><p className="business-core">{site.business.core.map(line => <span key={line}>{line}</span>)}</p><nav aria-label={site.ui.businessNav}>{site.business.contexts.map((c, i) => <button key={c.area} type="button" style={{ left: `${c.x}%`, top: `${c.y}%` }} onClick={() => select(i)} aria-pressed={state.active === i}>{c.area}</button>)}</nav></div>
         <div className="business-contexts">{site.business.contexts.map((c, i) => <article key={c.area} data-scene data-mobile-story className="business-context" aria-hidden={state.enhanced && state.active !== i ? true : undefined} inert={state.enhanced && state.active !== i}>
@@ -57,5 +57,18 @@ export function BusinessChapter() {
       </div>
       <p className="business-note page-gutter">{site.business.intro}</p>
     </div>
+  </section>;
+}
+
+export function MovementChapter() {
+  const { root, state, select } = useSceneChapter();
+  return <section ref={root} id="em-movimento" className="movement dark chapter scene-chapter" data-chapter data-scene-chapter="film" aria-labelledby="movement-heading">
+    <div className="scene-stage movement-stage">
+      <header className="scene-header page-gutter"><div><p className="eyebrow">{chapterTitle("em-movimento")}</p><h2 id="movement-heading">{site.movement.title}</h2></div><nav aria-label={site.movement.navigation}>{site.movement.scenes.map((scene, i) => <button key={scene.video} type="button" aria-pressed={state.active === i} onClick={() => select(i)}>{scene.title}</button>)}</nav></header>
+      <div className="scene-stack">{site.movement.scenes.map((scene, i) => <article key={scene.video} className="editorial-scene film-scene page-gutter" data-scene data-mobile-story aria-hidden={state.enhanced && state.active !== i ? true : undefined} inert={state.enhanced && state.active !== i}>
+        <div className="film-copy"><p className="film-index">{String(i+1).padStart(2,"0")} / 03</p><h3 className="scene-title">{scene.title}</h3><p className="film-statement">{scene.statement}</p><p className="film-description">{scene.description}</p></div>
+        <figure className={`scene-media film-media film-${scene.video}`}><PracticeVideo name={scene.video}/><figcaption>{site.videos[scene.video].description}</figcaption></figure>
+      </article>)}</div>
+    </div><div className="chapter-handoff handoff-action page-gutter" aria-hidden="true"><span>{site.movement.bridge}</span><i/></div>
   </section>;
 }

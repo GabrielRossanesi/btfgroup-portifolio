@@ -1,20 +1,21 @@
-# Mapa de conteúdo V3
+# Mapa de conteúdo V4
 
-Plano anterior à implementação. Copy/relacionamentos novos PROVISÓRIOS, centralizados em src/content/site.ts. Fatos limitados ao briefing, nomes de especialistas, dois projetos conhecidos e contatos confirmados.
+Copy centralizada em src/content/site.ts. Contatos confirmados: +55 11 99384-3003 e contato@btfgroup.com.br. Novas frases e associações comerciais são PROVISÓRIAS. Nenhuma cena descreve uma metodologia oficial, resultado ou cliente a partir de uma fotografia.
 
-| Capítulo | Conteúdo / mídia | Transformação |
+| Capítulo | Papel | Conteúdo / mídia |
 |---|---|---|
-| Abertura | BTF GROUP, Conhecimento encontra voz, Comunicação | Palavra de passagem |
-| Desenvolvimento | Núcleo + seis conceitos | Construção, relação ativa, reagrupamento |
-| O que | Comunicação/hero; Oratória/action; Argumentação/legal; Presença/action-detail | Termo dominante e enquadramento em quatro cenas |
-| Como | Aprender/action; experimentar/lecture; trocar/hero | Foto→aula vertical→público |
-| Especialistas | Claudia, Francisco, Luís/retratos | Trilho individual, ratio original |
-| Em ação | experience, book, microphone, action-detail, legal; practice | Mural espacial respeitando cada fonte |
-| Empresa | Sua empresa; Liderança, Comercial, Jurídico, Equipes | Relação área→competências→contexto por scroll e seleção |
-| Formatos | Workshop de Oratória; Mentoria Fale com Autoridade | Consulta, disponibilidade não afirmada |
-| Origem | União dos três + Júri Simulado; origin | Sem cronologia/evento/local inventado |
-| Conversa | WhatsApp5511993843003; contato@btfgroup.com.br | Canais reais |
+| 01 Abertura | Apresentar marca e variedade | Conhecimento encontra voz.; BTF / GROUP; nove fotografias reais |
+| 02 Desenvolvimento profissional | Conectar conceitos | Construção de seis competências e reorganização editorial |
+| 03 O que desenvolvemos | Dar significado | Comunicação, Oratória, Argumentação e Presença; registros correspondentes |
+| 04 Como desenvolvemos | Mostrar prática | Aprender, Experimentar, Trocar; duas fotos e vídeo lecture |
+| 05 Especialistas | Apresentar pessoas confirmadas | Claudia Trajano, Francisco Barbosa, Luís Flora; cenas coordenadas e retratos nomeados |
+| 06 BTF em movimento | Tornar expressão e interação perceptíveis | Expressar (gesture), Compartilhar (practice), Conversar (exchange) |
+| 07 BTF em ação | Evidenciar turmas e ambientes | Duas fotografias coletivas que não aparecem na Hero |
+| 08 Para sua empresa | Conectar ao contexto do comprador | Liderança, Comercial, Jurídico e Equipes; competências e exemplos provisórios |
+| 09 Formatos | Apresentar projetos conhecidos | Workshop de Oratória e Mentoria Fale com Autoridade; consulta real de disponibilidade |
+| 10 Nossa origem | Explicar união e contexto | Texto do briefing; composição tipográfica, sem repetir a turma de Ação |
+| 11 Conversa | Abrir contato | Sua equipe tem conhecimento. Vamos dar voz?; WhatsApp e e-mail confirmados |
 
-Aprender/experimentar/trocar não são método oficial ou promessa de feedback. Foto legal descreve pessoa ao microfone em mesa, sem provar case/atuação de identidade reconhecida. Livro não nomeado. Novos registros não recebem nomes por aparência.
+Cada mídia narrativa tem alt/descritivo de conteúdo, sem identificar participantes por aparência. A camada da capa é decorativa; os registros posteriores fornecem o contexto acessível. Bios e especialidades não confirmadas continuam omitidas. Mobile, reduced motion e no-JS mantêm todos os capítulos e 14 cenas de conteúdo em fluxo. Os quatro vídeos têm controle explícito e descrição textual; no-JS oferece links silenciosos.
 
-Mobile/reduced/noJS mostram cenas e relações completas; vídeo após play. Futuros formatos unpublished, bio/specialty null omitidos. Noindex/robots preservados até domínio institucional confirmado.
+Distribuição literal de todos os originais e motivos: ASSET-USAGE-V4.md. Trechos, enquadramento e comportamento: VIDEO-PLAN-V4.md.

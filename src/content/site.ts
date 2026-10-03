@@ -11,6 +11,7 @@ export const site = {
     { id: "competencias", title: "O que desenvolvemos" },
     { id: "pratica", title: "Como desenvolvemos" },
     { id: "especialistas", title: "Especialistas" },
+    { id: "em-movimento", title: "BTF em movimento" },
     { id: "em-acao", title: "BTF em ação" },
     { id: "empresa", title: "Para sua empresa" },
     { id: "formatos", title: "Formatos" },
@@ -62,7 +63,17 @@ export const site = {
     { id: "francisco", name: "Francisco Barbosa", lines: ["Francisco", "Barbosa"], image: "francisco", bio: null as string | null, specialty: null as string | null },
     { id: "luis", name: "Luís Flora", lines: ["Luís", "Flora"], image: "luis", bio: null as string | null, specialty: null as string | null },
   ],
-  action: { title: "O encontro faz parte.", caption: "Pessoas. Ideias. Aprendizado compartilhado.", detail: "A comunicação acontece entre pessoas.", bridge: "Sua equipe.", bookCaption: "Encontros que continuam na conversa.", microphoneCaption: "A palavra em diferentes ambientes.", videoCaption: "Falar. Escutar. Participar.", people: "Pessoas.", expertBridge: "Encontro." },
+  movement: {
+    title: "A comunicação ganha movimento.",
+    navigation: "Explorar registros em movimento",
+    scenes: [
+      { title: "Expressar.", statement: "A palavra acompanha o gesto.", description: "Uma apresentação ao microfone. Voz e expressão ocupam o mesmo espaço.", video: "gesture" as const },
+      { title: "Compartilhar.", statement: "Uma sala. Muitas perspectivas.", description: "O registro se abre para quem está presente. A comunicação envolve quem fala e quem acompanha.", video: "practice" as const },
+      { title: "Conversar.", statement: "A distância dá lugar à troca.", description: "A pessoa que apresenta se aproxima dos participantes. Um encontro entre fala, presença e escuta.", video: "exchange" as const },
+    ],
+    bridge: "Encontros.",
+  },
+  action: { title: "O encontro faz parte.", caption: "Pessoas. Ideias. Aprendizado compartilhado.", detail: "A comunicação acontece entre pessoas.", bridge: "Sua equipe.", people: "Aprender em conjunto.", environment: "Um espaço para participar.", environmentText: "Salas, encontros e pessoas no acervo real da BTF.", expertBridge: "Movimento." },
   business: {
     title: ["Onde a comunicação", "encontra o trabalho."],
     intro: "Um ponto de partida para conversar com RH, T&D e liderança sobre os contextos da sua equipe.",
@@ -126,8 +137,13 @@ export const site = {
   videos: {
     lecture: { label: "Registro silencioso de uma apresentação diante de uma projeção sobre oratória", description: "Uma pessoa apresenta diante de uma turma e de uma projeção.", width: 464, height: 832 },
     practice: { label: "Registro silencioso de interação entre uma pessoa que apresenta e participantes", description: "Uma pessoa circula e conversa diante de participantes em uma sala.", width: 478, height: 850 },
+    gesture: { label: "Registro silencioso de uma pessoa que gesticula durante uma apresentação ao microfone", description: "Uma pessoa apresenta ao microfone diante de uma projeção e acompanha a fala com gestos.", width: 576, height: 1024 },
+    exchange: { label: "Registro silencioso de uma pessoa que se aproxima dos participantes em uma sala", description: "Quem apresenta se aproxima de participantes sentados em uma sala, gesticula e abre espaço para a troca.", width: 478, height: 850 },
   },
 };
+export function chapterTitle(id: string) {
+  return site.chapters.find(chapter => chapter.id === id)!.title;
+}
 export function getContactUrl() {
   const candidate = process.env.NEXT_PUBLIC_CONTACT_URL;
   if (candidate) { try { const url = new URL(candidate); if (url.protocol === "https:" || url.protocol === "mailto:") return url.toString(); } catch { /* Confirmed fallback. */ } }

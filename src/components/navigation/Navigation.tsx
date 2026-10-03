@@ -22,13 +22,10 @@ export function Navigation() {
         const section=document.getElementById(chapter.id);
         // Pin spacers keep the outer chapter in document flow.
         if(!section)return;
-        // The first hand-off changes chapter only at the actual network start.
-        // Other chapter thresholds retain the existing presentation behavior.
-        const entered=chapter.id==="desenvolvimento"
-          ? section.dataset.motionStart!==undefined
-            ? window.scrollY>=Number(section.dataset.motionStart)-1
-            : section.getBoundingClientRect().top<=64
-          : section.getBoundingClientRect().top<=window.innerHeight*.4;
+        // Pinned chapters announce their actual start, including on reverse.
+        const entered=section.dataset.motionStart!==undefined
+          ? window.scrollY>=Number(section.dataset.motionStart)-1
+          : section.getBoundingClientRect().top<=65;
         if(entered)index=i;
       });
       setActive(index);

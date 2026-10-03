@@ -1,0 +1,546 @@
+{
+  "hero": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (3).jpeg",
+    "sourceBytes": 154435,
+    "sourceFormat": "JPEG",
+    "width": 1600,
+    "height": 1065,
+    "widths": [
+      320,
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "derivatives": [
+      {
+        "file": "hero-320.webp",
+        "width": 320,
+        "height": 213,
+        "bytes": 21932,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "hero-640.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 57704,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "hero-960.webp",
+        "width": 960,
+        "height": 639,
+        "bytes": 98724,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "hero-1280.webp",
+        "width": 1280,
+        "height": 852,
+        "bytes": 148842,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "hero-1600.webp",
+        "width": 1600,
+        "height": 1065,
+        "bytes": 199736,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "action": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27.jpeg",
+    "sourceBytes": 153905,
+    "sourceFormat": "JPEG",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      320,
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "derivatives": [
+      {
+        "file": "action-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 16280,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 47868,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 88966,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 136524,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 177460,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "action-detail": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (2).jpeg",
+    "sourceBytes": 124172,
+    "sourceFormat": "JPEG",
+    "width": 1200,
+    "height": 1600,
+    "widths": [
+      320,
+      640,
+      960,
+      1200
+    ],
+    "derivatives": [
+      {
+        "file": "action-detail-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 20914,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-detail-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 64574,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-detail-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 121356,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "action-detail-1200.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 155972,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "experience": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.26.jpeg",
+    "sourceBytes": 240701,
+    "sourceFormat": "JPEG",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      320,
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "derivatives": [
+      {
+        "file": "experience-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 29276,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "experience-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 85994,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "experience-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 154770,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "experience-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 233652,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "experience-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 302194,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "origin": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (4).jpeg",
+    "sourceBytes": 104716,
+    "sourceFormat": "JPEG",
+    "width": 1600,
+    "height": 1200,
+    "widths": [
+      320,
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "derivatives": [
+      {
+        "file": "origin-320.webp",
+        "width": 320,
+        "height": 240,
+        "bytes": 15410,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "origin-640.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 41096,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "origin-960.webp",
+        "width": 960,
+        "height": 720,
+        "bytes": 69798,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "origin-1280.webp",
+        "width": 1280,
+        "height": 960,
+        "bytes": 103822,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "origin-1600.webp",
+        "width": 1600,
+        "height": 1200,
+        "bytes": 127088,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "claudia": {
+    "source": "Claudia-Trajano-1.webp",
+    "sourceBytes": 91202,
+    "sourceFormat": "WEBP",
+    "width": 1080,
+    "height": 800,
+    "widths": [
+      320,
+      640,
+      960,
+      1080
+    ],
+    "derivatives": [
+      {
+        "file": "claudia-320.webp",
+        "width": 320,
+        "height": 237,
+        "bytes": 9894,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "claudia-640.webp",
+        "width": 640,
+        "height": 474,
+        "bytes": 36392,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "claudia-960.webp",
+        "width": 960,
+        "height": 711,
+        "bytes": 80790,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "claudia-1080.webp",
+        "width": 1080,
+        "height": 800,
+        "bytes": 91202,
+        "quality": "original-copy",
+        "format": "WEBP"
+      }
+    ]
+  },
+  "francisco": {
+    "source": "Francisco-1024x759.webp",
+    "sourceBytes": 56942,
+    "sourceFormat": "WEBP",
+    "width": 1024,
+    "height": 759,
+    "widths": [
+      320,
+      640,
+      960,
+      1024
+    ],
+    "derivatives": [
+      {
+        "file": "francisco-320.webp",
+        "width": 320,
+        "height": 237,
+        "bytes": 14098,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "francisco-640.webp",
+        "width": 640,
+        "height": 474,
+        "bytes": 48452,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "francisco-960.webp",
+        "width": 960,
+        "height": 712,
+        "bytes": 88272,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "francisco-1024.webp",
+        "width": 1024,
+        "height": 759,
+        "bytes": 56942,
+        "quality": "original-copy",
+        "format": "WEBP"
+      }
+    ]
+  },
+  "luis": {
+    "source": "Flora.webp",
+    "sourceBytes": 50870,
+    "sourceFormat": "WEBP",
+    "width": 1080,
+    "height": 800,
+    "widths": [
+      320,
+      640,
+      960,
+      1080
+    ],
+    "derivatives": [
+      {
+        "file": "luis-320.webp",
+        "width": 320,
+        "height": 237,
+        "bytes": 8970,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "luis-640.webp",
+        "width": 640,
+        "height": 474,
+        "bytes": 25574,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "luis-960.webp",
+        "width": 960,
+        "height": 711,
+        "bytes": 46102,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "luis-1080.webp",
+        "width": 1080,
+        "height": 800,
+        "bytes": 50870,
+        "quality": "original-copy",
+        "format": "WEBP"
+      }
+    ]
+  },
+  "book": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.27 (1).jpeg",
+    "sourceBytes": 151791,
+    "sourceFormat": "JPEG",
+    "width": 1200,
+    "height": 1600,
+    "widths": [
+      320,
+      640,
+      960,
+      1200
+    ],
+    "derivatives": [
+      {
+        "file": "book-320.webp",
+        "width": 320,
+        "height": 427,
+        "bytes": 30610,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "book-640.webp",
+        "width": 640,
+        "height": 853,
+        "bytes": 82894,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "book-960.webp",
+        "width": 960,
+        "height": 1280,
+        "bytes": 144232,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "book-1200.webp",
+        "width": 1200,
+        "height": 1600,
+        "bytes": 182856,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "microphone": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.28.jpeg",
+    "sourceBytes": 42905,
+    "sourceFormat": "JPEG",
+    "width": 633,
+    "height": 708,
+    "widths": [
+      320,
+      633
+    ],
+    "derivatives": [
+      {
+        "file": "microphone-320.webp",
+        "width": 320,
+        "height": 358,
+        "bytes": 27040,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "microphone-633.webp",
+        "width": 633,
+        "height": 708,
+        "bytes": 58846,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  },
+  "legal": {
+    "source": "WhatsApp Image 2026-10-02 at 09.04.28 (2).jpeg",
+    "sourceBytes": 487354,
+    "sourceFormat": "JPEG",
+    "width": 1600,
+    "height": 1600,
+    "widths": [
+      320,
+      640,
+      960,
+      1280,
+      1600
+    ],
+    "derivatives": [
+      {
+        "file": "legal-320.webp",
+        "width": 320,
+        "height": 320,
+        "bytes": 28864,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "legal-640.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 83620,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "legal-960.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 165554,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "legal-1280.webp",
+        "width": 1280,
+        "height": 1280,
+        "bytes": 275222,
+        "quality": 94,
+        "format": "WEBP"
+      },
+      {
+        "file": "legal-1600.webp",
+        "width": 1600,
+        "height": 1600,
+        "bytes": 407420,
+        "quality": 94,
+        "format": "WEBP"
+      }
+    ]
+  }
+}

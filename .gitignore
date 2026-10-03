@@ -57,4 +57,5 @@ Desktop.ini
 docs/qa/
 docs/audit/*.jpg
 docs/audit/*.png
+docs/audit/v4/*.jpg
 docs/history/v1/qa-results.json

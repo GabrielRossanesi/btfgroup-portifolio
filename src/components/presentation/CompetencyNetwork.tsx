@@ -25,7 +25,7 @@ export function CompetencyNetwork() {
         </svg>
         <h2 id="network-heading" className="network-core">{site.network.title.map(line => <span key={line}>{line}</span>)}</h2>
         {site.network.nodes.map((node, i) => <div className={`network-node node-${node.id}`} data-node key={node.id} style={{left:`${node.x}%`,top:`${node.y}%`}}>
-          <button type="button" onFocus={() => explore(i)} onClick={() => explore(i)} aria-pressed={active === i} aria-controls="network-description">{node.title}<span aria-hidden="true" /></button>
+          <button type="button" onFocus={() => setActive(i)} onClick={() => setActive(i)} aria-pressed={active === i} aria-controls="network-description">{node.title}<span aria-hidden="true" /></button>
         </div>)}
       </div>
       <div className="network-caption">

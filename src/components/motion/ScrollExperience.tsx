@@ -39,7 +39,8 @@ export function ScrollExperience() {
           if(!stage||!scenes.length)return;
           chapter.classList.add("has-scenes");
           const business=chapter.dataset.sceneChapter==="business";
-          const horizontal=chapter.dataset.sceneChapter==="horizontal";
+          const film=chapter.dataset.sceneChapter==="film";
+          const horizontal=chapter.dataset.sceneChapter==="horizontal"||film;
           const axis=horizontal?"xPercent":"yPercent";
           const duration=scenes.length*2;
           let previous=-1;
@@ -50,7 +51,7 @@ export function ScrollExperience() {
             document.dispatchEvent(new CustomEvent("btf:scene"));
           };
           scenes.forEach((scene,i)=>gsap.set(scene,{[axis]:i===0?0:business?10:105,autoAlpha:i===0?1:0}));
-          const timeline=gsap.timeline({scrollTrigger:{id:`btf-${chapter.id}`,trigger:chapter,pin:stage,start:"top 64px",end:()=>`+=${(innerHeight-64)*(business?2:horizontal?1.65:2.25)}`,scrub:.2,invalidateOnRefresh:true,
+          const timeline=gsap.timeline({scrollTrigger:{id:`btf-${chapter.id}`,trigger:chapter,pin:stage,start:"top 64px",end:()=>`+=${(innerHeight-64)*(business?2:film?1.9:horizontal?1.65:2.25)}`,scrub:.2,invalidateOnRefresh:true,
             onUpdate:self=>announce(Math.min(scenes.length-1,Math.floor(((self.animation?.time()??0)+.4)/2))),
             onRefresh:self=>{chapter.dataset.motionStart=String(self.start);chapter.dataset.motionEnd=String(self.end);}
           }});
@@ -58,7 +59,8 @@ export function ScrollExperience() {
             if(i>0)timeline.fromTo(scene,{[axis]:business?10:105,autoAlpha:0},{[axis]:0,autoAlpha:1,duration:.7,ease:"none"},i*2-.4);
             const title=scene.querySelector<HTMLElement>(".scene-title");
             if(title&&!business)timeline.to(title,{x:()=>innerWidth*.035,scale:.87,duration:.65,ease:"none"},i*2+.85);
-            const image=scene.querySelector<HTMLElement>(".scene-media");
+            // Video controls and captions remain outside the reveal mask.
+            const image=scene.querySelector<HTMLElement>(".practice-screen")??scene.querySelector<HTMLElement>(".scene-media");
             if(image)timeline.fromTo(image,{clipPath:"inset(0 18% 0 0)",x:horizontal?70:0,scale:horizontal?.94:1},{clipPath:"inset(0 0% 0 0)",x:0,scale:1,duration:.9,ease:"none"},i*2);
             if(i<scenes.length-1)timeline.to(scene,{[axis]:business?-10:-105,autoAlpha:0,duration:.7,ease:"none"},i*2+1.55);
           });
@@ -86,7 +88,8 @@ export function ScrollExperience() {
           modeRemovals.push(()=>{chapter.removeEventListener("btf:select-scene",choice);chapter.classList.remove("has-scenes");delete chapter.dataset.motionStart;delete chapter.dataset.motionEnd;delete chapter.dataset.activeScene;chapter.dispatchEvent(new CustomEvent("btf:scene-index",{detail:0}));document.dispatchEvent(new CustomEvent("btf:scene"));});
         };
         const bridge=document.querySelector(".opening-bridge");
-        if(bridge)gsap.to(bridge,{x:-40,y:-18,scale:.94,transformOrigin:"right center",ease:"none",scrollTrigger:{id:"btf-opening-bridge",trigger:"#inicio",start:"bottom bottom",end:"bottom 64px",scrub:true,invalidateOnRefresh:true}});
+        if(bridge)gsap.to(bridge,{y:-32,clipPath:"inset(0 100% 0 0)",ease:"none",scrollTrigger:{id:"btf-opening-bridge",trigger:"#inicio",start:"bottom bottom",end:"bottom 55%",scrub:true,invalidateOnRefresh:true}});
+        document.querySelectorAll<HTMLElement>("[data-mosaic-drift]").forEach(element=>gsap.to(element,{y:()=>Number(element.dataset.mosaicDrift),scale:1.04,ease:"none",scrollTrigger:{trigger:"#inicio",start:"top 64px",end:"bottom 64px",scrub:true,invalidateOnRefresh:true}}));
         const network=document.getElementById("desenvolvimento");
         const frame=network?.querySelector<HTMLElement>(".network-frame");
         const canvas=network?.querySelector<HTMLElement>(".network-canvas");
@@ -101,8 +104,8 @@ export function ScrollExperience() {
           paths.forEach(path=>{const length=Math.ceil(path.getTotalLength())+2;gsap.set(path,{strokeDasharray:`${length} ${length+4}`,strokeDashoffset:length+1});});
           network.classList.add("is-building");
           let previous=-2;
-          const timeline=gsap.timeline({scrollTrigger:{id:"btf-network",trigger:network,pin:frame,start:"top 64px",end:()=>`+=${(window.innerHeight-64)*2.2}`,scrub:.2,invalidateOnRefresh:true,
-            onUpdate:self=>{const time=self.animation?.time()??0;const index=time<.4?-1:Math.min(5,Math.floor((time-.4)/.8));if(previous!==index){previous=index;network.dispatchEvent(new CustomEvent("btf:network-active",{detail:index<0?null:index}));}},
+          const timeline=gsap.timeline({scrollTrigger:{id:"btf-network",trigger:network,pin:frame,start:"top 64px",end:()=>`+=${(window.innerHeight-64)*1.55}`,scrub:.2,invalidateOnRefresh:true,
+            onUpdate:self=>{const time=self.animation?.time()??0;const index=time<.32?-1:Math.min(5,Math.floor((time-.32)/.68));if(previous!==index){previous=index;network.dispatchEvent(new CustomEvent("btf:network-active",{detail:index<0?null:index}));}},
             onRefresh:self=>{network.dataset.motionStart=String(self.start);network.dataset.motionEnd=String(self.end);document.dispatchEvent(new CustomEvent("btf:network-layout"));}
           }});
           // CSS owns the -50% layout translate; GSAP owns only incremental transforms.
@@ -111,23 +114,21 @@ export function ScrollExperience() {
             const x=()=>canvas.clientWidth*(.46-parseFloat(node.style.left)/100);
             const y=()=>canvas.clientHeight*(.49-parseFloat(node.style.top)/100);
             const length=Math.ceil(paths[i].getTotalLength())+2;
-            timeline.fromTo(paths[i],{strokeDasharray:`${length} ${length+4}`,strokeDashoffset:length+1},{strokeDashoffset:0,duration:.85,ease:"none",immediateRender:false},i*.8+.25);
-            timeline.fromTo(node,{x,y,scale:.6,autoAlpha:0},{x:0,y:0,scale:1,autoAlpha:1,duration:.85,ease:"power1.out",immediateRender:false},i*.8+.4);
+            timeline.fromTo(paths[i],{strokeDasharray:`${length} ${length+4}`,strokeDashoffset:length+1},{strokeDashoffset:0,duration:.68,ease:"none",immediateRender:false},i*.68+.18);
+            timeline.fromTo(node,{x,y,scale:.6,autoAlpha:0},{x:0,y:0,scale:1,autoAlpha:1,duration:.68,ease:"power1.out",immediateRender:false},i*.68+.32);
           });
-          timeline.to({}, {duration:1.1});
           // The finished network becomes an editorial lexicon, carrying its words onward.
-          timeline.to(core,{x:()=>canvas.clientWidth*.27,y:()=>-canvas.clientHeight*.31,scale:.58,duration:1.15,ease:"none"},6.4);
+          timeline.to(core,{x:()=>canvas.clientWidth*.27,y:()=>-canvas.clientHeight*.31,scale:.58,duration:.85,ease:"none"},4.4);
           const positions=[[22,20],[22,43],[22,66],[72,66],[22,88],[72,43]];
-          nodes.forEach((node,i)=>timeline.to(node,{x:()=>canvas.clientWidth*(positions[i][0]/100-parseFloat(node.style.left)/100),y:()=>canvas.clientHeight*(positions[i][1]/100-parseFloat(node.style.top)/100),scale:i===0?1.5:1,duration:1.15,ease:"none"},6.4));
+          nodes.forEach((node,i)=>timeline.to(node,{x:()=>canvas.clientWidth*(positions[i][0]/100-parseFloat(node.style.left)/100),y:()=>canvas.clientHeight*(positions[i][1]/100-parseFloat(node.style.top)/100),scale:i===0?1.5:1,duration:.85,ease:"none"},4.4));
           const editorialPaths=["M730 94 C620 110 340 104 220 104","M220 104 C200 150 230 200 220 224","M220 224 C190 260 230 300 220 343","M220 343 C380 290 550 400 720 343","M220 224 C580 210 550 470 220 458","M220 104 C450 30 680 160 720 224"];
-          timeline.set(paths,{strokeDasharray:"none",strokeDashoffset:0},6.4);
-          paths.forEach((path,i)=>timeline.to(path,{attr:{d:editorialPaths[i]},duration:1.15,ease:"none"},6.4));
-          timeline.to({}, {duration:.5});
-          timeline.eventCallback("onUpdate",()=>{const time=timeline.time();const index=time<.4?-1:Math.min(5,Math.floor((time-.4)/.8));if(previous!==index){previous=index;network.dispatchEvent(new CustomEvent("btf:network-active",{detail:index<0?null:index}));}});
+          timeline.set(paths,{strokeDasharray:"none",strokeDashoffset:0},4.4);
+          paths.forEach((path,i)=>timeline.to(path,{attr:{d:editorialPaths[i]},duration:.85,ease:"none"},4.4));
+          timeline.eventCallback("onUpdate",()=>{const time=timeline.time();const index=time<.32?-1:Math.min(5,Math.floor((time-.32)/.68));if(previous!==index){previous=index;network.dispatchEvent(new CustomEvent("btf:network-active",{detail:index<0?null:index}));}});
           const explore=()=>{
             const trigger=timeline.scrollTrigger;
             if(!trigger)return;
-            const progress=5.8/timeline.duration();
+            const progress=4.4/timeline.duration();
             window.scrollTo({top:trigger.start+(trigger.end-trigger.start)*progress,behavior:"instant"});
             // Immediate completion ensures focused controls never wait for scrub.
             ScrollTrigger.update();trigger.getTween()?.progress(1);timeline.progress(progress);
@@ -140,29 +141,33 @@ export function ScrollExperience() {
         const viewport=experts?.querySelector<HTMLElement>(".experts-viewport");
         const track=experts?.querySelector<HTMLElement>(".experts-track");
         if(experts&&viewport&&track){
-          experts.classList.add("is-horizontal");
-          const distance=()=>Math.max(0,track.scrollWidth-viewport.clientWidth);
+          experts.classList.add("is-sequenced");
+          const panels=Array.from(track.querySelectorAll<HTMLElement>(".expert"));
           let previous=-1;
-          const tween=gsap.to(track,{x:()=>-distance(),ease:"none",scrollTrigger:{id:"btf-experts",trigger:viewport,pin:true,start:"top 64px",end:()=>`+=${distance()}`,scrub:.35,invalidateOnRefresh:true,
-            onUpdate:self=>{const index=Math.min(2,Math.round(self.progress*2));if(previous!==index){previous=index;experts.dispatchEvent(new CustomEvent("btf:expert",{detail:index}));}},
+          const announce=(index:number)=>{if(previous!==index){previous=index;experts.dispatchEvent(new CustomEvent("btf:expert",{detail:index}));}};
+          panels.forEach((panel,i)=>gsap.set(panel,{yPercent:i===0?0:105,autoAlpha:i===0?1:0}));
+          const timeline=gsap.timeline({scrollTrigger:{id:"btf-experts",trigger:viewport,pin:true,start:"top 64px",end:()=>`+=${(innerHeight-64)*1.5}`,scrub:.2,invalidateOnRefresh:true,
             onRefresh:self=>{experts.dataset.motionStart=String(self.start);experts.dataset.motionEnd=String(self.end);}
           }});
+          panels.forEach((panel,i)=>{
+            if(i>0)timeline.fromTo(panel,{yPercent:105,autoAlpha:0},{yPercent:0,autoAlpha:1,duration:.55,ease:"none"},i*1.4-.2);
+            const photo=panel.querySelector(".expert-photo");
+            if(photo)timeline.fromTo(photo,{x:18,clipPath:"inset(0 6% 0 0)"},{x:0,clipPath:"inset(0 0% 0 0)",duration:1.1,ease:"none"},i*1.4);
+            if(i<panels.length-1)timeline.to(panel,{yPercent:-105,autoAlpha:0,duration:.55,ease:"none"},(i+1)*1.4-.2);
+          });
+          timeline.to({}, {duration:.3},3.9);
+          timeline.eventCallback("onUpdate",()=>announce(Math.min(2,Math.floor((timeline.time()+.2)/1.4))));
           const select=(index:number)=>{
-            const trigger=tween.scrollTrigger;
-            if(!trigger)return;
-            window.scrollTo({top:trigger.start+distance()*(index/2),behavior:"instant"});
-            ScrollTrigger.update();trigger.getTween()?.progress(1);tween.progress(index/2);
+            const trigger=timeline.scrollTrigger;if(!trigger)return;
+            const progress=(index*1.4+.7)/timeline.duration();
+            window.scrollTo({top:trigger.start+(trigger.end-trigger.start)*progress,behavior:"instant"});
+            ScrollTrigger.update();trigger.getTween()?.progress(1);timeline.progress(progress);announce(index);
           };
           const choice=(event:Event)=>select((event as CustomEvent<number>).detail);
-          const focus=(event:FocusEvent)=>{
-            const article=(event.target as Element).closest<HTMLElement>(".expert");
-            if(!article)return;
-            select(Array.from(track.querySelectorAll(".expert")).indexOf(article));
-          };
-          experts.addEventListener("btf:select-expert",choice);
-          track.addEventListener("focusin",focus);
-          modeRemovals.push(()=>{experts.removeEventListener("btf:select-expert",choice);track.removeEventListener("focusin",focus);});
+          experts.addEventListener("btf:select-expert",choice);announce(0);
+          modeRemovals.push(()=>{experts.removeEventListener("btf:select-expert",choice);experts.classList.remove("is-sequenced");delete experts.dataset.motionStart;delete experts.dataset.motionEnd;experts.dispatchEvent(new CustomEvent("btf:expert",{detail:0}));});
         }
+        const films=document.querySelector<HTMLElement>('[data-scene-chapter="film"]');if(films)createScenes(films);
         document.querySelectorAll<HTMLElement>("[data-drift]").forEach(element=>{
           const speed=parseFloat(element.dataset.drift??"1");
           const distance=speed===1?40:speed<1?65:52;
@@ -173,7 +178,7 @@ export function ScrollExperience() {
         const conversation=document.getElementById("conversa");
         if(conversation)gsap.fromTo(conversation,{"--conversation-tone":0},{"--conversation-tone":1,ease:"none",scrollTrigger:{id:"btf-conversation-tone",trigger:conversation,start:"top bottom",end:"top 64px",scrub:true,invalidateOnRefresh:true}});
         requestAnimationFrame(()=>{if(!disposed){ScrollTrigger.refresh();if(restoredY!==null){window.scrollTo({top:restoredY,behavior:"instant"});ScrollTrigger.update();restoredY=null;}else if(location.hash)position(decodeURIComponent(location.hash.slice(1)));}});
-        return()=>{modeRemovals.forEach(fn=>fn());network?.classList.remove("is-building");experts?.classList.remove("is-horizontal");network?.dispatchEvent(new CustomEvent("btf:network-active",{detail:null}));};
+        return()=>{modeRemovals.forEach(fn=>fn());network?.classList.remove("is-building");experts?.classList.remove("is-sequenced");network?.dispatchEvent(new CustomEvent("btf:network-active",{detail:null}));};
       });
       let refreshFrame=0;
       let resizePosition:{id:string;progress:number}|undefined;
